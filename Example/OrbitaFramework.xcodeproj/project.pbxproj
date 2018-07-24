@@ -269,10 +269,12 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-OrbitaFramework_Example/Pods-OrbitaFramework_Example-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Efficio/Efficio.framework",
 				"${BUILT_PRODUCTS_DIR}/OrbitaFramework/OrbitaFramework.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Efficio.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/OrbitaFramework.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;

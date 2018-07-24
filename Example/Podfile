@@ -2,6 +2,7 @@ use_frameworks!
 
 target 'OrbitaFramework_Example' do
   pod 'OrbitaFramework', :path => '../'
+  pod 'Efficio', :git => 'https://github.com/jakecasino/Efficio', :branch => 'master'
 
   target 'OrbitaFramework_Tests' do
     inherit! :search_paths

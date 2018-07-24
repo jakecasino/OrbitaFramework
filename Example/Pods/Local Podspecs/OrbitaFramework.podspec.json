@@ -1,8 +1,8 @@
 {
   "name": "OrbitaFramework",
   "version": "0.1.0",
-  "summary": "A short description of OrbitaFramework.",
-  "description": "TODO: Add long description of the pod here.",
+  "summary": "Orbita AI chat app framework.",
+  "description": "Orbita AI chat app framework that includes all of the fundamental visual elements that supplement the chat.",
   "homepage": "https://github.com/jakecasino/OrbitaFramework",
   "license": {
     "type": "MIT",
@@ -16,7 +16,12 @@
     "tag": "0.1.0"
   },
   "platforms": {
-    "ios": "8.0"
+    "ios": "9.0"
   },
-  "source_files": "OrbitaFramework/Classes/**/*"
+  "source_files": "OrbitaFramework/Classes/**/*",
+  "swift_version": "4.0",
+  "frameworks": [
+    "UIKit",
+    "Efficio"
+  ]
 }

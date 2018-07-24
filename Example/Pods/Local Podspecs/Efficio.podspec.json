@@ -1,0 +1,24 @@
+{
+  "name": "Efficio",
+  "version": "0.2.0",
+  "summary": "Efficio: to make more efficient.",
+  "description": "A framework that condenses and consolidates common tasks for iOS Development.",
+  "homepage": "https://github.com/jakecasino/Efficio",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "jakecasino": "jake@jakecasino.com"
+  },
+  "source": {
+    "git": "https://github.com/jakecasino/Efficio.git",
+    "tag": "0.2.0"
+  },
+  "platforms": {
+    "ios": "9.0"
+  },
+  "source_files": "Efficio/Classes/**/*",
+  "swift_version": "4.0",
+  "frameworks": "UIKit"
+}

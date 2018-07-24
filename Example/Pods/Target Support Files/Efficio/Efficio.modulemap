@@ -1,0 +1,6 @@
+framework module Efficio {
+  umbrella header "Efficio-umbrella.h"
+
+  export *
+  module * { export * }
+}
