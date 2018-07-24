@@ -1,0 +1,22 @@
+{
+  "name": "OrbitaFramework",
+  "version": "0.1.0",
+  "summary": "A short description of OrbitaFramework.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/jakecasino/OrbitaFramework",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "jakecasino": "jake@jakecasino.com"
+  },
+  "source": {
+    "git": "https://github.com/jakecasino/OrbitaFramework.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "OrbitaFramework/Classes/**/*"
+}

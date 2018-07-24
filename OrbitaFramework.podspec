@@ -1,15 +1,7 @@
-#
-# Be sure to run `pod lib lint OrbitaFramework.podspec' to ensure this is a
-# valid spec before submitting.
-#
-# Any lines starting with a # are optional, but their use is encouraged
-# To learn more about a Podspec see https://guides.cocoapods.org/syntax/podspec.html
-#
-
 Pod::Spec.new do |s|
   s.name             = 'OrbitaFramework'
   s.version          = '0.1.0'
-  s.summary          = 'A short description of OrbitaFramework.'
+  s.summary          = 'Orbita AI chat app framework.'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -18,7 +10,7 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-TODO: Add long description of the pod here.
+Orbita AI chat app framework that includes all of the fundamental visual elements that supplement the chat.
                        DESC
 
   s.homepage         = 'https://github.com/jakecasino/OrbitaFramework'
@@ -28,15 +20,16 @@ TODO: Add long description of the pod here.
   s.source           = { :git => 'https://github.com/jakecasino/OrbitaFramework.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
-  s.ios.deployment_target = '8.0'
+  s.ios.deployment_target = '11.0'
 
   s.source_files = 'OrbitaFramework/Classes/**/*'
+  s.swift_version = '4.0'
   
   # s.resource_bundles = {
   #   'OrbitaFramework' => ['OrbitaFramework/Assets/*.png']
   # }
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
+  s.frameworks = 'UIKit'
   # s.dependency 'AFNetworking', '~> 2.3'
 end

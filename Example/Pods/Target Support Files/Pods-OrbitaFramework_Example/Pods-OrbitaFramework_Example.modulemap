@@ -1,0 +1,6 @@
+framework module Pods_OrbitaFramework_Example {
+  umbrella header "Pods-OrbitaFramework_Example-umbrella.h"
+
+  export *
+  module * { export * }
+}

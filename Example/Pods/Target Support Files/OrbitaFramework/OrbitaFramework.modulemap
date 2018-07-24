@@ -1,0 +1,6 @@
+framework module OrbitaFramework {
+  umbrella header "OrbitaFramework-umbrella.h"
+
+  export *
+  module * { export * }
+}
