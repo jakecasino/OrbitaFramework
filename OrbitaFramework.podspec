@@ -31,5 +31,6 @@ Orbita AI chat app framework that includes all of the fundamental visual element
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
   s.frameworks = 'UIKit', 'Efficio'
+  s.dependency 'Efficio', '~> 0.2.0'
   # s.dependency 'AFNetworking', '~> 2.3'
 end
