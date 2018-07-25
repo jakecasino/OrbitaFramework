@@ -4,12 +4,13 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14270.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="UIChatToolbar" customModule="OrbitaFramework">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ORBChatToolbar" customModule="OrbitaFramework">
             <connections>
                 <outlet property="micButton" destination="508-gt-vzk" id="1Ip-7J-cqp"/>
                 <outlet property="view" destination="iN0-l3-epB" id="uSp-TO-KJO"/>
@@ -20,7 +21,7 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="508-gt-vzk" customClass="UIAction" customModule="Efficio">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="508-gt-vzk" customClass="MicButton" customModule="OrbitaFramework" customModuleProvider="target">
                     <rect key="frame" x="149.5" y="575" width="76" height="76"/>
                     <color key="backgroundColor" red="0.0" green="0.68235294117647061" blue="0.93725490196078431" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     <constraints>
@@ -80,7 +81,7 @@
                     </userDefinedRuntimeAttributes>
                 </button>
             </subviews>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="508-gt-vzk" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Eba-7w-ToU"/>
                 <constraint firstItem="zLk-9p-yyk" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="Zj9-qa-W2W"/>
@@ -94,7 +95,7 @@
     </objects>
     <resources>
         <image name="keyboard" width="34" height="34"/>
-        <image name="mic" width="112" height="112"/>
+        <image name="mic" width="384" height="384"/>
         <image name="more" width="34" height="34"/>
     </resources>
 </document>
