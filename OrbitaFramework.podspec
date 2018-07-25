@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'OrbitaFramework'
-  s.version          = '0.1.0'
+  s.version          = 'master'
   s.summary          = 'Orbita AI chat app framework.'
 
 # This description is used to generate tags and improve search results.
@@ -24,13 +24,11 @@ Orbita AI chat app framework that includes all of the fundamental visual element
 
   s.source_files = 'OrbitaFramework/Classes/**/*'
   s.swift_version = '4.0'
-  
-  s.resource_bundles = {
-	'OrbitaFramework' => ['OrbitaFramework/Assets/*.{xib,xcassets}']
-  }
+
+  s.resources = 'OrbitaFramework/Assets/*'
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
   s.frameworks = 'UIKit', 'Efficio'
-  s.dependency 'Efficio', '~> 0.2.0'
+  # s.dependency 'Efficio', '~> 0.2.0'
   # s.dependency 'AFNetworking', '~> 2.3'
 end
