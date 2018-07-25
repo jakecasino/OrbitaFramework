@@ -92,7 +92,7 @@ extension UIView {
 							padding = paddingInsets.top
 						} else { printErrorForPadding() }
 					}
-					if let view = view { safeArea = view.safeAreaInsets.top }
+					if let view = view { if #available(iOS 11.0, *) { safeArea = view.safeAreaInsets.top } }
 					return 0 + padding + safeArea
 				
 				case .middle:
@@ -104,7 +104,7 @@ extension UIView {
 							padding = paddingInsets.bottom
 						} else { printErrorForPadding() }
 					}
-					if let view = view { safeArea = view.safeAreaInsets.bottom }
+					if let view = view { if #available(iOS 11.0, *) { safeArea = view.safeAreaInsets.bottom } }
 					return superview.bounds.height - bounds.height - padding - safeArea
 				
 				case .left, .leftMinusPadding:
@@ -235,7 +235,7 @@ extension UIView {
 						} else { printErrorForPadding() }
 					}
 					
-					if let view = view { safeArea = view.safeAreaInsets.left + view.safeAreaInsets.right }
+					if let view = view { if #available(iOS 11.0, *) { safeArea = view.safeAreaInsets.left + view.safeAreaInsets.right } }
 					return superview.bounds.width - padding - safeArea
 				
 				case .height, .heightMinusPadding:
@@ -245,7 +245,7 @@ extension UIView {
 						} else { printErrorForPadding() }
 					}
 					
-					if let view = view { safeArea = view.safeAreaInsets.top + view.safeAreaInsets.bottom }
+					if let view = view { if #available(iOS 11.0, *) { safeArea = view.safeAreaInsets.top + view.safeAreaInsets.bottom } }
 					return superview.bounds.height - padding - safeArea
 				}
 			}

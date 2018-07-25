@@ -1,33 +1,11 @@
 PODS:
   - Efficio (0.2.0)
-  - FBSnapshotTestCase (2.1.4):
-    - FBSnapshotTestCase/SwiftSupport (= 2.1.4)
-  - FBSnapshotTestCase/Core (2.1.4)
-  - FBSnapshotTestCase/SwiftSupport (2.1.4):
-    - FBSnapshotTestCase/Core
-  - Nimble (7.0.3)
-  - Nimble-Snapshots (6.3.0):
-    - Nimble-Snapshots/Core (= 6.3.0)
-  - Nimble-Snapshots/Core (6.3.0):
-    - FBSnapshotTestCase (~> 2.0)
-    - Nimble (~> 7.0)
-  - OrbitaFramework (0.1.0)
-  - Quick (1.2.0)
+  - OrbitaFramework (0.1.0):
+    - Efficio (~> 0.2.0)
 
 DEPENDENCIES:
   - Efficio (from `https://github.com/jakecasino/Efficio`, branch `master`)
-  - FBSnapshotTestCase (~> 2.1.4)
-  - Nimble (~> 7.0.2)
-  - Nimble-Snapshots (~> 6.3.0)
   - OrbitaFramework (from `../`)
-  - Quick (~> 1.2.0)
-
-SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
-    - FBSnapshotTestCase
-    - Nimble
-    - Nimble-Snapshots
-    - Quick
 
 EXTERNAL SOURCES:
   Efficio:
@@ -38,17 +16,13 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   Efficio:
-    :commit: 9b656b3e704b70d805bbc385feefcadf8afb2db6
+    :commit: 9146907bdbc345ab4f63320b8354eb718420714f
     :git: https://github.com/jakecasino/Efficio
 
 SPEC CHECKSUMS:
   Efficio: e0a3eed9c31501270c7b110900c13b87a27ce1dd
-  FBSnapshotTestCase: 094f9f314decbabe373b87cc339bea235a63e07a
-  Nimble: 7f5a9c447a33002645a071bddafbfb24ea70e0ac
-  Nimble-Snapshots: f5459b5b091678dc942d03ec4741cacb58ba4a52
-  OrbitaFramework: b618b3744cbfe038267a693e15e4db1666a633fd
-  Quick: 58d203b1c5e27fff7229c4c1ae445ad7069a7a08
+  OrbitaFramework: 2b65b9ab02dbd9d68941bc56c8f11d22358a39c3
 
-PODFILE CHECKSUM: c3ed7ff6a70edcee87f47a6f52382ae3e405e4bb
+PODFILE CHECKSUM: 798a0c903a1052137d17c4525acca1254abe64e4
 
 COCOAPODS: 1.5.3

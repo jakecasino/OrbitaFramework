@@ -25,9 +25,9 @@ Orbita AI chat app framework that includes all of the fundamental visual element
   s.source_files = 'OrbitaFramework/Classes/**/*'
   s.swift_version = '4.0'
   
-  # s.resource_bundles = {
-  #   'OrbitaFramework' => ['OrbitaFramework/Assets/*.png']
-  # }
+  s.resource_bundles = {
+	'OrbitaFramework' => ['OrbitaFramework/Assets/*.{xib,xcassets}']
+  }
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
   s.frameworks = 'UIKit', 'Efficio'

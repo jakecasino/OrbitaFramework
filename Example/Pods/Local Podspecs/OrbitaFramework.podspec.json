@@ -20,8 +20,18 @@
   },
   "source_files": "OrbitaFramework/Classes/**/*",
   "swift_version": "4.0",
+  "resource_bundles": {
+    "OrbitaFramework": [
+      "OrbitaFramework/Assets/*.{xib,xcassets}"
+    ]
+  },
   "frameworks": [
     "UIKit",
     "Efficio"
-  ]
+  ],
+  "dependencies": {
+    "Efficio": [
+      "~> 0.2.0"
+    ]
+  }
 }

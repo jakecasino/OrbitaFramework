@@ -32,27 +32,25 @@ public class UIAction: UIButton {
 			}
 		}
 	}
-}
-
-extension UIButton {
+	
 	private static var associationKey_baseColor: UInt8 = 0
 	private static var associationKey_accentColor: UInt8 = 1
 	
 	@IBInspectable public var baseColor: UIColor {
 		get {
-			return objc_getAssociatedObject(self, &UIButton.associationKey_baseColor) as! UIColor
+			return objc_getAssociatedObject(self, &UIAction.associationKey_baseColor) as! UIColor
 		}
 		set(newValue) {
-			objc_setAssociatedObject(self, &UIButton.associationKey_baseColor, newValue, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN)
+			objc_setAssociatedObject(self, &UIAction.associationKey_baseColor, newValue, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN)
 		}
 	}
 	
 	@IBInspectable public var accentColor: UIColor {
 		get {
-			return objc_getAssociatedObject(self, &UIButton.associationKey_accentColor) as! UIColor
+			return objc_getAssociatedObject(self, &UIAction.associationKey_accentColor) as! UIColor
 		}
 		set(newValue) {
-			objc_setAssociatedObject(self, &UIButton.associationKey_accentColor, newValue, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN)
+			objc_setAssociatedObject(self, &UIAction.associationKey_accentColor, newValue, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN)
 		}
 	}
 	

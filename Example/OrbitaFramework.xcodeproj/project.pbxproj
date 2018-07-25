@@ -13,7 +13,6 @@
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
-		9DB3B3FF9A0B57C2ECB1FB07 /* Pods_OrbitaFramework_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBA0A5DA780483DBCB9044D6 /* Pods_OrbitaFramework_Tests.framework */; };
 		E6D3C2067BDB47DA957E37F5 /* Pods_OrbitaFramework_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7179D6B2DBFB49C830568E45 /* Pods_OrbitaFramework_Example.framework */; };
 /* End PBXBuildFile section */
 
@@ -42,9 +41,7 @@
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		7179D6B2DBFB49C830568E45 /* Pods_OrbitaFramework_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OrbitaFramework_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7772C91DBA70C57E4AB05363 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
-		7F786CBD609BE70A28411905 /* Pods-OrbitaFramework_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OrbitaFramework_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OrbitaFramework_Tests/Pods-OrbitaFramework_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		9A401442BBB1AA998F80336F /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
-		A398799AE68134A20D63EAB6 /* Pods-OrbitaFramework_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OrbitaFramework_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-OrbitaFramework_Tests/Pods-OrbitaFramework_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		E21BA70EE3B140ED89A1EF6B /* Pods-OrbitaFramework_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OrbitaFramework_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-OrbitaFramework_Example/Pods-OrbitaFramework_Example.release.xcconfig"; sourceTree = "<group>"; };
 		EBA0A5DA780483DBCB9044D6 /* Pods_OrbitaFramework_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OrbitaFramework_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -62,7 +59,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9DB3B3FF9A0B57C2ECB1FB07 /* Pods_OrbitaFramework_Tests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,8 +79,6 @@
 			children = (
 				5BEC515C28946A40BC0424FD /* Pods-OrbitaFramework_Example.debug.xcconfig */,
 				E21BA70EE3B140ED89A1EF6B /* Pods-OrbitaFramework_Example.release.xcconfig */,
-				7F786CBD609BE70A28411905 /* Pods-OrbitaFramework_Tests.debug.xcconfig */,
-				A398799AE68134A20D63EAB6 /* Pods-OrbitaFramework_Tests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -185,11 +179,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 607FACF21AFB9204008FA782 /* Build configuration list for PBXNativeTarget "OrbitaFramework_Tests" */;
 			buildPhases = (
-				FB63D8450F8DEC8333EDD369 /* [CP] Check Pods Manifest.lock */,
 				607FACE11AFB9204008FA782 /* Sources */,
 				607FACE21AFB9204008FA782 /* Frameworks */,
 				607FACE31AFB9204008FA782 /* Resources */,
-				F7D9F2BE6DF387839EFB7560 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -294,48 +286,6 @@
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-OrbitaFramework_Example-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		F7D9F2BE6DF387839EFB7560 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-OrbitaFramework_Tests/Pods-OrbitaFramework_Tests-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/FBSnapshotTestCase/FBSnapshotTestCase.framework",
-				"${BUILT_PRODUCTS_DIR}/Nimble/Nimble.framework",
-				"${BUILT_PRODUCTS_DIR}/Nimble-Snapshots/Nimble_Snapshots.framework",
-				"${BUILT_PRODUCTS_DIR}/Quick/Quick.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSnapshotTestCase.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nimble.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nimble_Snapshots.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Quick.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-OrbitaFramework_Tests/Pods-OrbitaFramework_Tests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		FB63D8450F8DEC8333EDD369 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-OrbitaFramework_Tests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -523,7 +473,6 @@
 		};
 		607FACF31AFB9204008FA782 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7F786CBD609BE70A28411905 /* Pods-OrbitaFramework_Tests.debug.xcconfig */;
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -545,7 +494,6 @@
 		};
 		607FACF41AFB9204008FA782 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A398799AE68134A20D63EAB6 /* Pods-OrbitaFramework_Tests.release.xcconfig */;
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
