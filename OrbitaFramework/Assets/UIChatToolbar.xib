@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14270.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -21,11 +20,13 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="508-gt-vzk" customClass="UIAction" customModule="Efficio">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="508-gt-vzk" customClass="UIAction" customModule="Efficio">
                     <rect key="frame" x="149.5" y="575" width="76" height="76"/>
                     <color key="backgroundColor" red="0.0" green="0.68235294117647061" blue="0.93725490196078431" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     <constraints>
+                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="34" id="2uv-VB-I13"/>
                         <constraint firstAttribute="width" constant="76" id="O6R-4R-f3S"/>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="34" id="Xu4-UU-HXd"/>
                         <constraint firstAttribute="height" constant="76" id="epl-Ka-o1I"/>
                     </constraints>
                     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -42,16 +43,58 @@
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zLk-9p-yyk" customClass="UIAction" customModule="Efficio">
+                    <rect key="frame" x="16" y="596" width="34" height="34"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="34" id="TJ1-LI-Auj"/>
+                        <constraint firstAttribute="width" constant="34" id="Zb5-iW-yMa"/>
+                    </constraints>
+                    <color key="tintColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <state key="normal" image="keyboard"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="color" keyPath="baseColor">
+                            <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="accentColor">
+                            <color key="value" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b3w-am-wKG" customClass="UIAction" customModule="Efficio">
+                    <rect key="frame" x="325" y="596" width="34" height="34"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="34" id="XK0-Nq-GuB"/>
+                        <constraint firstAttribute="height" constant="34" id="rVp-rp-Wzl"/>
+                    </constraints>
+                    <color key="tintColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <state key="normal" image="more"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="color" keyPath="baseColor">
+                            <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="accentColor">
+                            <color key="value" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="508-gt-vzk" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Eba-7w-ToU"/>
+                <constraint firstItem="zLk-9p-yyk" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="Zj9-qa-W2W"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="b3w-am-wKG" secondAttribute="trailing" constant="16" id="fOQ-DK-Gvi"/>
+                <constraint firstItem="b3w-am-wKG" firstAttribute="centerY" secondItem="zLk-9p-yyk" secondAttribute="centerY" id="iLB-nv-HHf"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="508-gt-vzk" secondAttribute="bottom" constant="16" id="mAU-zB-j9o"/>
+                <constraint firstItem="508-gt-vzk" firstAttribute="centerY" secondItem="zLk-9p-yyk" secondAttribute="centerY" id="pOV-x1-H3y"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
         </view>
     </objects>
     <resources>
+        <image name="keyboard" width="34" height="34"/>
         <image name="mic" width="112" height="112"/>
+        <image name="more" width="34" height="34"/>
     </resources>
 </document>
