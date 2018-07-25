@@ -1,6 +1,6 @@
 {
   "name": "OrbitaFramework",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "summary": "Orbita AI chat app framework.",
   "description": "Orbita AI chat app framework that includes all of the fundamental visual elements that supplement the chat.",
   "homepage": "https://github.com/jakecasino/OrbitaFramework",
@@ -13,25 +13,16 @@
   },
   "source": {
     "git": "https://github.com/jakecasino/OrbitaFramework.git",
-    "tag": "0.1.0"
+    "tag": "0.2.0"
   },
   "platforms": {
     "ios": "9.0"
   },
   "source_files": "OrbitaFramework/Classes/**/*",
   "swift_version": "4.0",
-  "resource_bundles": {
-    "OrbitaFramework": [
-      "OrbitaFramework/Assets/*.{xib,xcassets}"
-    ]
-  },
+  "resources": "OrbitaFramework/Assets/*",
   "frameworks": [
     "UIKit",
     "Efficio"
-  ],
-  "dependencies": {
-    "Efficio": [
-      "~> 0.2.0"
-    ]
-  }
+  ]
 }

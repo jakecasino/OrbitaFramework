@@ -7,56 +7,39 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		09C78421C088ABB70550D4BCC5D2E579 /* OrbitaFramework.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 3426FE45F7B746DD419B2CA40418BD77 /* OrbitaFramework.bundle */; };
-		0B00DF6C21080BF500C219E2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 68C50246E98E7719F047E009CD2089AF /* Assets.xcassets */; };
-		0B00DF6D21080C0000C219E2 /* UIChatToolbar.xib in Resources */ = {isa = PBXBuildFile; fileRef = E3F3E9D245F86FFA25927199BC40945D /* UIChatToolbar.xib */; };
-		0E7207269353C75D0C6671FB41AC8941 /* Efficio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5BC7999261D56488D8B3C9928E75975 /* Efficio.framework */; };
+		00B60D75ACE70A1B32D24DE2FCFF2C9E /* ChatToolbar.xib in Resources */ = {isa = PBXBuildFile; fileRef = CAF4C3EF8E60648A0482A1BCC5F2498F /* ChatToolbar.xib */; };
 		1513B9EEDB7CC9248F6314CB9D601AF4 /* Error Handling.swift in Sources */ = {isa = PBXBuildFile; fileRef = D96B55BE105A7D91BFC94058231F4CD6 /* Error Handling.swift */; };
-		348ED6FD6250243AF038F699026E6200 /* UIChatToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F498891757A39FB75D2131CE26F04989 /* UIChatToolbar.swift */; };
-		37FB8A90F6A1CD6CB12F3AFE2019652C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D0F4318C6DBF3DE8B9E4CDBD0FE445A /* Foundation.framework */; };
+		18C3F97E523C9EA5610F70EF882FABA4 /* ChatToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FEEB26523D94F2009D943A79FD97A6B /* ChatToolbar.swift */; };
+		1E866A8068595BA54F1E8401AFC17493 /* AppDesign.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4497AD0F3CB8EA4BD09CE3B9EF9524F2 /* AppDesign.swift */; };
 		3C782D0D48231F9E13EEEC0A09BF5CE7 /* Pods-OrbitaFramework_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C7BB260F7A3D3C5C82E116C1C2C36BE2 /* Pods-OrbitaFramework_Example-dummy.m */; };
-		4162CC5303ED453413084AA50DBB38DB /* Efficio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CED50EF5BE275DF57C04426C32FD7F0D /* Efficio.framework */; };
+		3ED45C84F856570D56C693B20D4C4B5D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1CFA3F4136EFAF7C045F3543F62F109 /* UIKit.framework */; };
 		42F74B9796857D8100DA5A25257A6F79 /* Collection Views.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B79BCEEABAB93B822BC6D416FA5BB12 /* Collection Views.swift */; };
 		4719BA2CC403E16D874BDF8E8463060D /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9899B3625D7E60BAAF0EDA46D9AE4A /* Colors.swift */; };
-		49A8BAD6AC0A59A34BD0A8AB3041BD62 /* OrbitaFramework-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E4A08FA7C72B25E275FE1E3687FC93B8 /* OrbitaFramework-dummy.m */; };
-		51FD2603FE8BF1804C80894B7248F37D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BFCD7E3D85EDC9744894B8AC18162E3 /* UIKit.framework */; };
+		51FD2603FE8BF1804C80894B7248F37D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1CFA3F4136EFAF7C045F3543F62F109 /* UIKit.framework */; };
 		72A93B72E98C4A505F4F8E0DF6650134 /* Efficio-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E6C61BCE109789FCBBEB559A99A82A82 /* Efficio-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		74A439EF79836FF3E0202A5AE975CEC9 /* Efficio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BD37EC3F2513F834FB3B33BC4E8B8E3 /* Efficio.framework */; };
 		7B11FCDE7E0C5E390BCE64C72CB7974F /* Xib Handling.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1207038DAA89B5F282AA6FD3B28C2FA /* Xib Handling.swift */; };
-		7FDE666031DA2EC72B338DAE0955D92B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D0F4318C6DBF3DE8B9E4CDBD0FE445A /* Foundation.framework */; };
+		7FDE666031DA2EC72B338DAE0955D92B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC1314AF3BFA0881783EAEE6DAC51105 /* Foundation.framework */; };
+		86DBC6992008FD92BB64901B10AFFBDE /* OrbitaFramework-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5EC7B932BB93540D69FBEE444195E1DD /* OrbitaFramework-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		977607CE50C241B4839EE668B7DCB928 /* Efficio-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E11FF31A70B92C5D9C57CCC78E2F211F /* Efficio-dummy.m */; };
-		98A1BCE673C8025AFF45E331546DF0BF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BFCD7E3D85EDC9744894B8AC18162E3 /* UIKit.framework */; };
-		A6DD5E953BCBA22BBA254475A08F52A1 /* OrbitaFramework-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 44890FBE8CEE1EDF8CAB756ACA33E97C /* OrbitaFramework-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A709B669E5B4842C2D549146D65E1982 /* Labels.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1302C8938DA814EF9D2656EF13281B0 /* Labels.swift */; };
 		A8B24044EC26E42BC63C63E99E2B428E /* Views.swift in Sources */ = {isa = PBXBuildFile; fileRef = B43E551F33AE7D4D469E2FD765F45D0E /* Views.swift */; };
-		BBF45925119E776692CE2BBCD6413978 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D0F4318C6DBF3DE8B9E4CDBD0FE445A /* Foundation.framework */; };
+		BBF45925119E776692CE2BBCD6413978 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC1314AF3BFA0881783EAEE6DAC51105 /* Foundation.framework */; };
 		BFB7095E21F91C2966BF7B9EE6A59A81 /* Traits.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5373613817565C2F65E44C542740D291 /* Traits.swift */; };
 		C1F728F9A67213B258D2A9BB5EE8EFB2 /* Pods-OrbitaFramework_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A91A5EFE3207AB2664399CCC3976810A /* Pods-OrbitaFramework_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		C5F50635B4C7EE6C72EE070372F5FD14 /* UIChatToolbar.xib in Resources */ = {isa = PBXBuildFile; fileRef = E3F3E9D245F86FFA25927199BC40945D /* UIChatToolbar.xib */; };
+		C50B810982CE52382A29EF315BD05015 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B8C39454AEC4BA3CFE3B4D84C9D2BF0B /* Assets.xcassets */; };
 		DD1F2AF62E15339C59ECE0397B203A65 /* Glyphs.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01384EC639DA1E186E8714A878DF825 /* Glyphs.swift */; };
-		DE2F71F313969430E7968B5449184F61 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 68C50246E98E7719F047E009CD2089AF /* Assets.xcassets */; };
 		E42F6044B7756EE33882D4E82581F00D /* Actions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B15880F40EA76A9BA653034308F0CECC /* Actions.swift */; };
+		EAE2791F5EE8259111EBFC2756B168E8 /* OrbitaFramework-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F0E0A293C945EAFCA11106A5366E2A5F /* OrbitaFramework-dummy.m */; };
+		EF4EF731B2DBC254B08201777AC160D3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC1314AF3BFA0881783EAEE6DAC51105 /* Foundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		84B20F5C160FFD30D0377BE81A47D52B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = BA39D7A64FDF8DCB26DBB88988E87BBD;
-			remoteInfo = Efficio;
-		};
-		8C13FEC2BC20A3821FF18D6F2EDC8DB8 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = D6066F13193B459D32C1F89BB897B980;
-			remoteInfo = "OrbitaFramework-OrbitaFramework";
-		};
 		914421849EA3C65F5D690F4F439B22A0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = FBA70569A3485C594464DAC7EF09B02A;
+			remoteGlobalIDString = 2AD67754CFCD54C6384DB0B09EB4235A;
 			remoteInfo = OrbitaFramework;
 		};
 		C8AE70C94AA4A26FAFFA2D47B849E7C3 /* PBXContainerItemProxy */ = {
@@ -70,52 +53,50 @@
 
 /* Begin PBXFileReference section */
 		01F4D41F46546565DD6AAD7614DBD726 /* Pods-OrbitaFramework_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-OrbitaFramework_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
+		05E01B7E2DC7852E04E9449327754BD2 /* OrbitaFramework.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = OrbitaFramework.xcconfig; sourceTree = "<group>"; };
 		0B79BCEEABAB93B822BC6D416FA5BB12 /* Collection Views.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Collection Views.swift"; path = "Efficio/Classes/Collection Views.swift"; sourceTree = "<group>"; };
 		0F3B5232A3D1B217D19720411CEF7465 /* Pods-OrbitaFramework_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-OrbitaFramework_Example-frameworks.sh"; sourceTree = "<group>"; };
-		124B8D3F45E4B055A98637AB3838A14E /* Pods_OrbitaFramework_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OrbitaFramework_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1857656088421529BB4467108CEF358C /* Efficio.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Efficio.xcconfig; sourceTree = "<group>"; };
 		1B672409F5F498B65D587F6834F5889F /* Pods-OrbitaFramework_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-OrbitaFramework_Example-acknowledgements.plist"; sourceTree = "<group>"; };
-		1BFCD7E3D85EDC9744894B8AC18162E3 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		22B90970DE8159DC1A439683E90251D7 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		286D5F7BED84016AF86738D50FA2D402 /* Efficio.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Efficio.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		3426FE45F7B746DD419B2CA40418BD77 /* OrbitaFramework.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OrbitaFramework.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
-		44890FBE8CEE1EDF8CAB756ACA33E97C /* OrbitaFramework-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "OrbitaFramework-umbrella.h"; sourceTree = "<group>"; };
-		49315C743697C8C83D2271EB0715E893 /* OrbitaFramework-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "OrbitaFramework-prefix.pch"; sourceTree = "<group>"; };
-		49F6B8BA73A1231E6161BBBE577036D8 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
-		4E575B080F80B60DEAC517BED9A38EF5 /* OrbitaFramework.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; path = OrbitaFramework.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		2D7ACE69704798731C6F419D6EAF6135 /* OrbitaFramework.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = OrbitaFramework.modulemap; sourceTree = "<group>"; };
+		4497AD0F3CB8EA4BD09CE3B9EF9524F2 /* AppDesign.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AppDesign.swift; path = OrbitaFramework/Classes/AppDesign.swift; sourceTree = "<group>"; };
 		5155BD0E4267370984F573C03FA8ADA4 /* Efficio.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Efficio.modulemap; sourceTree = "<group>"; };
 		526D6F5E8F1CF11B72D1803EADA7A7C4 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5373613817565C2F65E44C542740D291 /* Traits.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Traits.swift; path = Efficio/Classes/Traits.swift; sourceTree = "<group>"; };
-		570BC79FE96EB101D9B4CAD073530FB0 /* OrbitaFramework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = OrbitaFramework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		65BBD640B3F10E9D5BBD95206CFCD90E /* OrbitaFramework.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = OrbitaFramework.modulemap; sourceTree = "<group>"; };
-		68C50246E98E7719F047E009CD2089AF /* Assets.xcassets */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = OrbitaFramework/Assets/Assets.xcassets; sourceTree = "<group>"; };
+		5EC7B932BB93540D69FBEE444195E1DD /* OrbitaFramework-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "OrbitaFramework-umbrella.h"; sourceTree = "<group>"; };
+		6C2998CB8F9982560087C1B710BF185F /* OrbitaFramework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = OrbitaFramework.framework; path = OrbitaFramework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C775F936F89D051CFD08D26BD689F8A /* Efficio-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Efficio-prefix.pch"; sourceTree = "<group>"; };
-		7C84772D50D8EF114AC872BA896D8CA6 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7D0F4318C6DBF3DE8B9E4CDBD0FE445A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		7BD37EC3F2513F834FB3B33BC4E8B8E3 /* Efficio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Efficio.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Efficio.framework; sourceTree = DEVELOPER_DIR; };
 		7D30D9211835F6FE014E3910120FDF71 /* Pods-OrbitaFramework_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-OrbitaFramework_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		84AC807355422F0B06A748E495717CAC /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		8FEEB26523D94F2009D943A79FD97A6B /* ChatToolbar.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ChatToolbar.swift; path = OrbitaFramework/Classes/ChatToolbar.swift; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9751B5567D0C365BD520A7CE695E33CF /* Pods-OrbitaFramework_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-OrbitaFramework_Example.release.xcconfig"; sourceTree = "<group>"; };
 		A1207038DAA89B5F282AA6FD3B28C2FA /* Xib Handling.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Xib Handling.swift"; path = "Efficio/Classes/Xib Handling.swift"; sourceTree = "<group>"; };
 		A91A5EFE3207AB2664399CCC3976810A /* Pods-OrbitaFramework_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-OrbitaFramework_Example-umbrella.h"; sourceTree = "<group>"; };
+		A9854676434AEE7FAF057EEC0B442752 /* Efficio.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Efficio.framework; path = Efficio.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD9899B3625D7E60BAAF0EDA46D9AE4A /* Colors.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Colors.swift; path = Efficio/Classes/Colors.swift; sourceTree = "<group>"; };
+		AF77F0515587DC0F607E157A27F038AD /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
 		B15880F40EA76A9BA653034308F0CECC /* Actions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Actions.swift; path = Efficio/Classes/Actions.swift; sourceTree = "<group>"; };
 		B1A41FBA52088EDCFD1D623DFACDFDEF /* Pods-OrbitaFramework_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-OrbitaFramework_Example-resources.sh"; sourceTree = "<group>"; };
+		B1CFA3F4136EFAF7C045F3543F62F109 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		B43E551F33AE7D4D469E2FD765F45D0E /* Views.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Views.swift; path = Efficio/Classes/Views.swift; sourceTree = "<group>"; };
-		B6B0B702943A846B265DA03FFAFFFDCE /* ResourceBundle-OrbitaFramework-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-OrbitaFramework-Info.plist"; sourceTree = "<group>"; };
-		BB05FB94364BE7E0F5C06203F26D5757 /* OrbitaFramework.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = OrbitaFramework.xcconfig; sourceTree = "<group>"; };
-		C5BC7999261D56488D8B3C9928E75975 /* Efficio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Efficio.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Efficio.framework; sourceTree = DEVELOPER_DIR; };
+		B8C39454AEC4BA3CFE3B4D84C9D2BF0B /* Assets.xcassets */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = OrbitaFramework/Assets/Assets.xcassets; sourceTree = "<group>"; };
+		C2046080A807E655EB0050DB2D91684F /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C7BB260F7A3D3C5C82E116C1C2C36BE2 /* Pods-OrbitaFramework_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-OrbitaFramework_Example-dummy.m"; sourceTree = "<group>"; };
-		CED50EF5BE275DF57C04426C32FD7F0D /* Efficio.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Efficio.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CAF4C3EF8E60648A0482A1BCC5F2498F /* ChatToolbar.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; name = ChatToolbar.xib; path = OrbitaFramework/Assets/ChatToolbar.xib; sourceTree = "<group>"; };
+		CE5B1EF88088CCCB1C79DB87E5ED9030 /* OrbitaFramework.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; path = OrbitaFramework.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		D16C8343C7F4378DE9F33987792177A8 /* Pods-OrbitaFramework_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-OrbitaFramework_Example.modulemap"; sourceTree = "<group>"; };
+		D1F4B687AA398C314F93969E693A1AFB /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
 		D96B55BE105A7D91BFC94058231F4CD6 /* Error Handling.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Error Handling.swift"; path = "Efficio/Classes/Error Handling.swift"; sourceTree = "<group>"; };
+		DC1314AF3BFA0881783EAEE6DAC51105 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		DE8822BF69AA860BFD893DC51772634A /* Pods_OrbitaFramework_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_OrbitaFramework_Example.framework; path = "Pods-OrbitaFramework_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E01384EC639DA1E186E8714A878DF825 /* Glyphs.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Glyphs.swift; path = Efficio/Classes/Glyphs.swift; sourceTree = "<group>"; };
+		E090D42B449EC96F56EBFB1A05D783A5 /* OrbitaFramework-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "OrbitaFramework-prefix.pch"; sourceTree = "<group>"; };
 		E11FF31A70B92C5D9C57CCC78E2F211F /* Efficio-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Efficio-dummy.m"; sourceTree = "<group>"; };
 		E1302C8938DA814EF9D2656EF13281B0 /* Labels.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Labels.swift; path = Efficio/Classes/Labels.swift; sourceTree = "<group>"; };
-		E3F3E9D245F86FFA25927199BC40945D /* UIChatToolbar.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; name = UIChatToolbar.xib; path = OrbitaFramework/Assets/UIChatToolbar.xib; sourceTree = "<group>"; };
-		E4A08FA7C72B25E275FE1E3687FC93B8 /* OrbitaFramework-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "OrbitaFramework-dummy.m"; sourceTree = "<group>"; };
 		E6C61BCE109789FCBBEB559A99A82A82 /* Efficio-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Efficio-umbrella.h"; sourceTree = "<group>"; };
-		F498891757A39FB75D2131CE26F04989 /* UIChatToolbar.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UIChatToolbar.swift; path = OrbitaFramework/Classes/UIChatToolbar.swift; sourceTree = "<group>"; };
+		F0E0A293C945EAFCA11106A5366E2A5F /* OrbitaFramework-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "OrbitaFramework-dummy.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,35 +117,19 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		924B13BC6B0A0908977F10125732680A /* Frameworks */ = {
+		F5256CE938A6A11001B8B033E41A28D2 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		B0D766A9829F85D0C612830CDDCCD076 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				0E7207269353C75D0C6671FB41AC8941 /* Efficio.framework in Frameworks */,
-				4162CC5303ED453413084AA50DBB38DB /* Efficio.framework in Frameworks */,
-				37FB8A90F6A1CD6CB12F3AFE2019652C /* Foundation.framework in Frameworks */,
-				98A1BCE673C8025AFF45E331546DF0BF /* UIKit.framework in Frameworks */,
+				74A439EF79836FF3E0202A5AE975CEC9 /* Efficio.framework in Frameworks */,
+				EF4EF731B2DBC254B08201777AC160D3 /* Foundation.framework in Frameworks */,
+				3ED45C84F856570D56C693B20D4C4B5D /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		088F23CA4B65C3E3E6443133EE1D1948 /* Development Pods */ = {
-			isa = PBXGroup;
-			children = (
-				F0BE9D9E9D2DFD3080026D68F3BEF0C2 /* OrbitaFramework */,
-			);
-			name = "Development Pods";
-			sourceTree = "<group>";
-		};
 		0B2E284323DEB5744D7AF6AF4E79F4DB /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -173,14 +138,21 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		271CE7265683B0F839AB868435C62B49 /* iOS */ = {
+		122DA2E5084A4393C29BE363C764795C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				C5BC7999261D56488D8B3C9928E75975 /* Efficio.framework */,
-				7D0F4318C6DBF3DE8B9E4CDBD0FE445A /* Foundation.framework */,
-				1BFCD7E3D85EDC9744894B8AC18162E3 /* UIKit.framework */,
+				62C018FDF57AB791A2DAE88BDE82643F /* iOS */,
 			);
-			name = iOS;
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1838B45A70452A1B1F335080F669EA3B /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				B8C39454AEC4BA3CFE3B4D84C9D2BF0B /* Assets.xcassets */,
+				CAF4C3EF8E60648A0482A1BCC5F2498F /* ChatToolbar.xib */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 		27B779138C690972D976D5CC9CDF4D64 /* Efficio */ = {
@@ -197,7 +169,16 @@
 				A1207038DAA89B5F282AA6FD3B28C2FA /* Xib Handling.swift */,
 				987A1FADD978FF628731D08AB3D8A8B3 /* Support Files */,
 			);
+			name = Efficio;
 			path = Efficio;
+			sourceTree = "<group>";
+		};
+		2D4D2FC266C26F64EFF29EAB884126E9 /* Development Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D935C70CEABE8C5E758350A9A4C4755C /* OrbitaFramework */,
+			);
+			name = "Development Pods";
 			sourceTree = "<group>";
 		};
 		4DBF58405DD8B37820FC144A10353609 /* Pods */ = {
@@ -208,35 +189,40 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		5FB95D5B66C2CEF4FE7B2E7CE7B6977D /* Frameworks */ = {
+		62C018FDF57AB791A2DAE88BDE82643F /* iOS */ = {
 			isa = PBXGroup;
 			children = (
-				CED50EF5BE275DF57C04426C32FD7F0D /* Efficio.framework */,
-				271CE7265683B0F839AB868435C62B49 /* iOS */,
+				7BD37EC3F2513F834FB3B33BC4E8B8E3 /* Efficio.framework */,
+				DC1314AF3BFA0881783EAEE6DAC51105 /* Foundation.framework */,
+				B1CFA3F4136EFAF7C045F3543F62F109 /* UIKit.framework */,
 			);
-			name = Frameworks;
+			name = iOS;
 			sourceTree = "<group>";
 		};
 		7DB346D0F39D3F0E887471402A8071AB = {
 			isa = PBXGroup;
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
-				088F23CA4B65C3E3E6443133EE1D1948 /* Development Pods */,
-				5FB95D5B66C2CEF4FE7B2E7CE7B6977D /* Frameworks */,
+				2D4D2FC266C26F64EFF29EAB884126E9 /* Development Pods */,
+				122DA2E5084A4393C29BE363C764795C /* Frameworks */,
 				4DBF58405DD8B37820FC144A10353609 /* Pods */,
-				9DED0810E855DB56EA5907DDC17C9346 /* Products */,
+				B51F4D0673547F4962AE7B356304CD41 /* Products */,
 				0B2E284323DEB5744D7AF6AF4E79F4DB /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
-		8B2240231950D3A180BA1454B1451A21 /* Pod */ = {
+		8BDFC36A69D08E0B7DD7BCAA053F654A /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				49F6B8BA73A1231E6161BBBE577036D8 /* LICENSE */,
-				4E575B080F80B60DEAC517BED9A38EF5 /* OrbitaFramework.podspec */,
-				84AC807355422F0B06A748E495717CAC /* README.md */,
+				C2046080A807E655EB0050DB2D91684F /* Info.plist */,
+				2D7ACE69704798731C6F419D6EAF6135 /* OrbitaFramework.modulemap */,
+				05E01B7E2DC7852E04E9449327754BD2 /* OrbitaFramework.xcconfig */,
+				F0E0A293C945EAFCA11106A5366E2A5F /* OrbitaFramework-dummy.m */,
+				E090D42B449EC96F56EBFB1A05D783A5 /* OrbitaFramework-prefix.pch */,
+				5EC7B932BB93540D69FBEE444195E1DD /* OrbitaFramework-umbrella.h */,
 			);
-			name = Pod;
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/OrbitaFramework";
 			sourceTree = "<group>";
 		};
 		987A1FADD978FF628731D08AB3D8A8B3 /* Support Files */ = {
@@ -253,15 +239,14 @@
 			path = "../Target Support Files/Efficio";
 			sourceTree = "<group>";
 		};
-		9DED0810E855DB56EA5907DDC17C9346 /* Products */ = {
+		A161CBE4070A21DF38E6C39E671A6211 /* Pod */ = {
 			isa = PBXGroup;
 			children = (
-				286D5F7BED84016AF86738D50FA2D402 /* Efficio.framework */,
-				3426FE45F7B746DD419B2CA40418BD77 /* OrbitaFramework.bundle */,
-				570BC79FE96EB101D9B4CAD073530FB0 /* OrbitaFramework.framework */,
-				124B8D3F45E4B055A98637AB3838A14E /* Pods_OrbitaFramework_Example.framework */,
+				AF77F0515587DC0F607E157A27F038AD /* LICENSE */,
+				CE5B1EF88088CCCB1C79DB87E5ED9030 /* OrbitaFramework.podspec */,
+				D1F4B687AA398C314F93969E693A1AFB /* README.md */,
 			);
-			name = Products;
+			name = Pod;
 			sourceTree = "<group>";
 		};
 		A71CD8190E2F2EF67C4128EA792C8B36 /* Pods-OrbitaFramework_Example */ = {
@@ -282,37 +267,24 @@
 			path = "Target Support Files/Pods-OrbitaFramework_Example";
 			sourceTree = "<group>";
 		};
-		A76CE4F8BC8F8FF0C23906BEDA45BC34 /* Support Files */ = {
+		B51F4D0673547F4962AE7B356304CD41 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				7C84772D50D8EF114AC872BA896D8CA6 /* Info.plist */,
-				65BBD640B3F10E9D5BBD95206CFCD90E /* OrbitaFramework.modulemap */,
-				BB05FB94364BE7E0F5C06203F26D5757 /* OrbitaFramework.xcconfig */,
-				E4A08FA7C72B25E275FE1E3687FC93B8 /* OrbitaFramework-dummy.m */,
-				49315C743697C8C83D2271EB0715E893 /* OrbitaFramework-prefix.pch */,
-				44890FBE8CEE1EDF8CAB756ACA33E97C /* OrbitaFramework-umbrella.h */,
-				B6B0B702943A846B265DA03FFAFFFDCE /* ResourceBundle-OrbitaFramework-Info.plist */,
+				A9854676434AEE7FAF057EEC0B442752 /* Efficio.framework */,
+				6C2998CB8F9982560087C1B710BF185F /* OrbitaFramework.framework */,
+				DE8822BF69AA860BFD893DC51772634A /* Pods_OrbitaFramework_Example.framework */,
 			);
-			name = "Support Files";
-			path = "Example/Pods/Target Support Files/OrbitaFramework";
+			name = Products;
 			sourceTree = "<group>";
 		};
-		B2CDC542D6BCA3BB89B50AC287C31BA0 /* Resources */ = {
+		D935C70CEABE8C5E758350A9A4C4755C /* OrbitaFramework */ = {
 			isa = PBXGroup;
 			children = (
-				68C50246E98E7719F047E009CD2089AF /* Assets.xcassets */,
-				E3F3E9D245F86FFA25927199BC40945D /* UIChatToolbar.xib */,
-			);
-			name = Resources;
-			sourceTree = "<group>";
-		};
-		F0BE9D9E9D2DFD3080026D68F3BEF0C2 /* OrbitaFramework */ = {
-			isa = PBXGroup;
-			children = (
-				F498891757A39FB75D2131CE26F04989 /* UIChatToolbar.swift */,
-				8B2240231950D3A180BA1454B1451A21 /* Pod */,
-				B2CDC542D6BCA3BB89B50AC287C31BA0 /* Resources */,
-				A76CE4F8BC8F8FF0C23906BEDA45BC34 /* Support Files */,
+				4497AD0F3CB8EA4BD09CE3B9EF9524F2 /* AppDesign.swift */,
+				8FEEB26523D94F2009D943A79FD97A6B /* ChatToolbar.swift */,
+				A161CBE4070A21DF38E6C39E671A6211 /* Pod */,
+				1838B45A70452A1B1F335080F669EA3B /* Resources */,
+				8BDFC36A69D08E0B7DD7BCAA053F654A /* Support Files */,
 			);
 			name = OrbitaFramework;
 			path = ../..;
@@ -337,17 +309,35 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		91890A0507F2E1F7067A253255973089 /* Headers */ = {
+		617ED9AFDCFE24CA390E9B56770AA87B /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A6DD5E953BCBA22BBA254475A08F52A1 /* OrbitaFramework-umbrella.h in Headers */,
+				86DBC6992008FD92BB64901B10AFFBDE /* OrbitaFramework-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		2AD67754CFCD54C6384DB0B09EB4235A /* OrbitaFramework */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0F3B0F61D607E8F5E1207B2B07BD1451 /* Build configuration list for PBXNativeTarget "OrbitaFramework" */;
+			buildPhases = (
+				5A04B0E7BA576D72FB8E9357A4F26B7E /* Sources */,
+				F5256CE938A6A11001B8B033E41A28D2 /* Frameworks */,
+				562DC6DC10A7A7BA4605C5250828674B /* Resources */,
+				617ED9AFDCFE24CA390E9B56770AA87B /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = OrbitaFramework;
+			productName = OrbitaFramework;
+			productReference = 6C2998CB8F9982560087C1B710BF185F /* OrbitaFramework.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 		BA39D7A64FDF8DCB26DBB88988E87BBD /* Efficio */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = B96A35A4C5181B7FFC27662292E8601F /* Build configuration list for PBXNativeTarget "Efficio" */;
@@ -362,44 +352,7 @@
 			);
 			name = Efficio;
 			productName = Efficio;
-			productReference = 286D5F7BED84016AF86738D50FA2D402 /* Efficio.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		D6066F13193B459D32C1F89BB897B980 /* OrbitaFramework-OrbitaFramework */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 497105C5AE05644042ACC4DD0FADBD61 /* Build configuration list for PBXNativeTarget "OrbitaFramework-OrbitaFramework" */;
-			buildPhases = (
-				0938CB95B9496D2AE1847F307D3D98AB /* Sources */,
-				924B13BC6B0A0908977F10125732680A /* Frameworks */,
-				A9473080E6CC3865B549E325F7A08A2F /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "OrbitaFramework-OrbitaFramework";
-			productName = "OrbitaFramework-OrbitaFramework";
-			productReference = 3426FE45F7B746DD419B2CA40418BD77 /* OrbitaFramework.bundle */;
-			productType = "com.apple.product-type.bundle";
-		};
-		FBA70569A3485C594464DAC7EF09B02A /* OrbitaFramework */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = B37E72EC35B7832EC556227EC1B92AB7 /* Build configuration list for PBXNativeTarget "OrbitaFramework" */;
-			buildPhases = (
-				E348E2551A9F177B8D52AD140183C464 /* Sources */,
-				B0D766A9829F85D0C612830CDDCCD076 /* Frameworks */,
-				D65B43CD208D1FF8ABD2A83D7C6B4EFC /* Resources */,
-				91890A0507F2E1F7067A253255973089 /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				D10348065B5E9201D86BF5AA6CF9F226 /* PBXTargetDependency */,
-				DD8819A2D35671B6E7DFFA31C51AE282 /* PBXTargetDependency */,
-			);
-			name = OrbitaFramework;
-			productName = OrbitaFramework;
-			productReference = 570BC79FE96EB101D9B4CAD073530FB0 /* OrbitaFramework.framework */;
+			productReference = A9854676434AEE7FAF057EEC0B442752 /* Efficio.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		FFD3F347CDAF69A23D4B959F4286BFAC /* Pods-OrbitaFramework_Example */ = {
@@ -418,7 +371,7 @@
 			);
 			name = "Pods-OrbitaFramework_Example";
 			productName = "Pods-OrbitaFramework_Example";
-			productReference = 124B8D3F45E4B055A98637AB3838A14E /* Pods_OrbitaFramework_Example.framework */;
+			productReference = DE8822BF69AA860BFD893DC51772634A /* Pods_OrbitaFramework_Example.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -438,48 +391,30 @@
 				en,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = 9DED0810E855DB56EA5907DDC17C9346 /* Products */;
+			productRefGroup = B51F4D0673547F4962AE7B356304CD41 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				BA39D7A64FDF8DCB26DBB88988E87BBD /* Efficio */,
-				FBA70569A3485C594464DAC7EF09B02A /* OrbitaFramework */,
-				D6066F13193B459D32C1F89BB897B980 /* OrbitaFramework-OrbitaFramework */,
+				2AD67754CFCD54C6384DB0B09EB4235A /* OrbitaFramework */,
 				FFD3F347CDAF69A23D4B959F4286BFAC /* Pods-OrbitaFramework_Example */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		A9473080E6CC3865B549E325F7A08A2F /* Resources */ = {
+		562DC6DC10A7A7BA4605C5250828674B /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DE2F71F313969430E7968B5449184F61 /* Assets.xcassets in Resources */,
-				C5F50635B4C7EE6C72EE070372F5FD14 /* UIChatToolbar.xib in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		D65B43CD208D1FF8ABD2A83D7C6B4EFC /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				0B00DF6C21080BF500C219E2 /* Assets.xcassets in Resources */,
-				0B00DF6D21080C0000C219E2 /* UIChatToolbar.xib in Resources */,
-				09C78421C088ABB70550D4BCC5D2E579 /* OrbitaFramework.bundle in Resources */,
+				C50B810982CE52382A29EF315BD05015 /* Assets.xcassets in Resources */,
+				00B60D75ACE70A1B32D24DE2FCFF2C9E /* ChatToolbar.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		0938CB95B9496D2AE1847F307D3D98AB /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		1F6F03E11E9A210DD8E09046EA691D16 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -497,12 +432,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E348E2551A9F177B8D52AD140183C464 /* Sources */ = {
+		5A04B0E7BA576D72FB8E9357A4F26B7E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				49A8BAD6AC0A59A34BD0A8AB3041BD62 /* OrbitaFramework-dummy.m in Sources */,
-				348ED6FD6250243AF038F699026E6200 /* UIChatToolbar.swift in Sources */,
+				1E866A8068595BA54F1E8401AFC17493 /* AppDesign.swift in Sources */,
+				18C3F97E523C9EA5610F70EF882FABA4 /* ChatToolbar.swift in Sources */,
+				EAE2791F5EE8259111EBFC2756B168E8 /* OrbitaFramework-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -520,20 +456,8 @@
 		A80EA821063AD34FA8691DA92E7536EA /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = OrbitaFramework;
-			target = FBA70569A3485C594464DAC7EF09B02A /* OrbitaFramework */;
+			target = 2AD67754CFCD54C6384DB0B09EB4235A /* OrbitaFramework */;
 			targetProxy = 914421849EA3C65F5D690F4F439B22A0 /* PBXContainerItemProxy */;
-		};
-		D10348065B5E9201D86BF5AA6CF9F226 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = Efficio;
-			target = BA39D7A64FDF8DCB26DBB88988E87BBD /* Efficio */;
-			targetProxy = 84B20F5C160FFD30D0377BE81A47D52B /* PBXContainerItemProxy */;
-		};
-		DD8819A2D35671B6E7DFFA31C51AE282 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "OrbitaFramework-OrbitaFramework";
-			target = D6066F13193B459D32C1F89BB897B980 /* OrbitaFramework-OrbitaFramework */;
-			targetProxy = 8C13FEC2BC20A3821FF18D6F2EDC8DB8 /* PBXContainerItemProxy */;
 		};
 		E3327A3B75897003437778544D572E93 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -544,21 +468,70 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		60B8E7DE87C3CD6BFE8AE765FCC7E588 /* Debug */ = {
+		342728AB68CBD315B8E5C0993CC0ABC6 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BB05FB94364BE7E0F5C06203F26D5757 /* OrbitaFramework.xcconfig */;
+			baseConfigurationReference = 05E01B7E2DC7852E04E9449327754BD2 /* OrbitaFramework.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/OrbitaFramework";
-				INFOPLIST_FILE = "Target Support Files/OrbitaFramework/ResourceBundle-OrbitaFramework-Info.plist";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/OrbitaFramework/OrbitaFramework-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/OrbitaFramework/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/OrbitaFramework/OrbitaFramework.modulemap";
+				PRODUCT_MODULE_NAME = OrbitaFramework;
 				PRODUCT_NAME = OrbitaFramework;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				WRAPPER_EXTENSION = bundle;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
+		};
+		54E8C957E0A925EEF7EA1940D4E5A4EF /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 05E01B7E2DC7852E04E9449327754BD2 /* OrbitaFramework.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/OrbitaFramework/OrbitaFramework-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/OrbitaFramework/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/OrbitaFramework/OrbitaFramework.modulemap";
+				PRODUCT_MODULE_NAME = OrbitaFramework;
+				PRODUCT_NAME = OrbitaFramework;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
 		};
 		7603B82FA9F0663D137A741668B46075 /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -594,38 +567,6 @@
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
-		};
-		7F681FBBA96B2372A7AA623C43CCC77A /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = BB05FB94364BE7E0F5C06203F26D5757 /* OrbitaFramework.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/OrbitaFramework/OrbitaFramework-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/OrbitaFramework/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/OrbitaFramework/OrbitaFramework.modulemap";
-				PRODUCT_MODULE_NAME = OrbitaFramework;
-				PRODUCT_NAME = OrbitaFramework;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
 		};
 		878B6E9850DE00D956BD99C4B03D8EF8 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -725,22 +666,6 @@
 			};
 			name = Debug;
 		};
-		9AA0C28A515BA6580288BFE7DAD9DC80 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = BB05FB94364BE7E0F5C06203F26D5757 /* OrbitaFramework.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/OrbitaFramework";
-				INFOPLIST_FILE = "Target Support Files/OrbitaFramework/ResourceBundle-OrbitaFramework-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				PRODUCT_NAME = OrbitaFramework;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				WRAPPER_EXTENSION = bundle;
-			};
-			name = Release;
-		};
 		B42B54097A876E8A982CBF5DAA91B1AB /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -832,39 +757,6 @@
 			};
 			name = Release;
 		};
-		D1E04EA6D45E97B3AAF87A09B7D418E4 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = BB05FB94364BE7E0F5C06203F26D5757 /* OrbitaFramework.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/OrbitaFramework/OrbitaFramework-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/OrbitaFramework/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/OrbitaFramework/OrbitaFramework.modulemap";
-				PRODUCT_MODULE_NAME = OrbitaFramework;
-				PRODUCT_NAME = OrbitaFramework;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
 		D396AE374FCCC44EECF0765898ADCD2E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 1857656088421529BB4467108CEF358C /* Efficio.xcconfig */;
@@ -900,29 +792,20 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		0F3B0F61D607E8F5E1207B2B07BD1451 /* Build configuration list for PBXNativeTarget "OrbitaFramework" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				342728AB68CBD315B8E5C0993CC0ABC6 /* Debug */,
+				54E8C957E0A925EEF7EA1940D4E5A4EF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				8B33C5230DE4A9DFA6D8F46505DD7AF7 /* Debug */,
 				B42B54097A876E8A982CBF5DAA91B1AB /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		497105C5AE05644042ACC4DD0FADBD61 /* Build configuration list for PBXNativeTarget "OrbitaFramework-OrbitaFramework" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				60B8E7DE87C3CD6BFE8AE765FCC7E588 /* Debug */,
-				9AA0C28A515BA6580288BFE7DAD9DC80 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		B37E72EC35B7832EC556227EC1B92AB7 /* Build configuration list for PBXNativeTarget "OrbitaFramework" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				7F681FBBA96B2372A7AA623C43CCC77A /* Debug */,
-				D1E04EA6D45E97B3AAF87A09B7D418E4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

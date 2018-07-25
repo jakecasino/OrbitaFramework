@@ -1,7 +1,6 @@
 PODS:
   - Efficio (0.2.0)
-  - OrbitaFramework (0.1.0):
-    - Efficio (~> 0.2.0)
+  - OrbitaFramework (0.2.0)
 
 DEPENDENCIES:
   - Efficio (from `https://github.com/jakecasino/Efficio`, branch `master`)
@@ -21,7 +20,7 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   Efficio: e0a3eed9c31501270c7b110900c13b87a27ce1dd
-  OrbitaFramework: 2b65b9ab02dbd9d68941bc56c8f11d22358a39c3
+  OrbitaFramework: fff7959937fab474e43c97c4a512836e06488ce5
 
 PODFILE CHECKSUM: 798a0c903a1052137d17c4525acca1254abe64e4
 
