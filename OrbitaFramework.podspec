@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'OrbitaFramework'
-  s.version          = 'master'
+  s.version          = '0.1.0'
   s.summary          = 'Orbita AI chat app framework.'
 
 # This description is used to generate tags and improve search results.
