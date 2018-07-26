@@ -23,7 +23,7 @@ Orbita AI chat app framework that includes all of the fundamental visual element
   s.ios.deployment_target = '9.0'
 
   s.source_files = 'OrbitaFramework/Classes/**/*'
-  s.swift_version = '4.0'
+  s.swift_version = '4.2'
 
   s.resources = 'OrbitaFramework/Assets/*'
 

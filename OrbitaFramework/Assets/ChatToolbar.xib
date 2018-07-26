@@ -12,7 +12,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ORBChatToolbar" customModule="OrbitaFramework">
             <connections>
+                <outlet property="keyboardButton" destination="zLk-9p-yyk" id="LH9-dA-1ht"/>
                 <outlet property="micButton" destination="508-gt-vzk" id="1Ip-7J-cqp"/>
+                <outlet property="moreButton" destination="b3w-am-wKG" id="Dof-7m-Aq2"/>
                 <outlet property="view" destination="iN0-l3-epB" id="uSp-TO-KJO"/>
             </connections>
         </placeholder>
@@ -95,7 +97,7 @@
     </objects>
     <resources>
         <image name="keyboard" width="34" height="34"/>
-        <image name="mic" width="384" height="384"/>
+        <image name="mic" width="112" height="112"/>
         <image name="more" width="34" height="34"/>
     </resources>
 </document>
