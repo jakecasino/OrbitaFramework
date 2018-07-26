@@ -21,7 +21,7 @@ public class ORBChatToolbar: UIView {
 	@IBOutlet weak var keyboardButton: UIAction!
 	@IBOutlet weak var moreButton: UIAction!
 	
-	private var listeningAnimation: ListeningAnimation!
+	private var speakerGrillAnimation: SpeakerGrillAnimation!
 	
 	required public init?(coder aDecoder: NSCoder) {
 		super.init(coder: aDecoder)
@@ -30,17 +30,17 @@ public class ORBChatToolbar: UIView {
 		setupXibView(view, inContainer: self)
 		
 		style(micButton, [.glyphEdgeInsets: 10])
-		micButton.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(toggleMic(_:))))
+		micButton.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(micButtonWasTapped(_:))))
 	}
 	
 	public override func didMoveToSuperview() {
-		listeningAnimation = ListeningAnimation(addTo: view, linkToMicButton: micButton)
+		speakerGrillAnimation = SpeakerGrillAnimation(addTo: view, linkToMicButton: micButton)
 	}
 	
 	public func setupAutoLayoutAlignment(in view: UIView) {
 		if needsToSetupAutoLayoutAlignment {
 			if #available(iOS 11.0, *) {
-				listeningAnimation.resize(addToWidth: nil, addToHeight: -(view.safeAreaInsets.bottom))
+				speakerGrillAnimation.resize(addToWidth: nil, addToHeight: -(view.safeAreaInsets.bottom))
 				needsToSetupAutoLayoutAlignment = false
 			}
 		}
@@ -55,9 +55,15 @@ public class ORBChatToolbar: UIView {
 		}
 	}
 	
-	@objc private func toggleMic(_ gesture: UITapGestureRecognizer) {
+	@objc private func micButtonWasTapped(_ gesture: UITapGestureRecognizer) {
+		toggleListeningModeAnimations(executeChatToolbarDelegateMethods: true)
+	}
+	
+	public func toggleListeningModeAnimations(executeChatToolbarDelegateMethods: Bool) {
 		micButton.toggle(inactiveState: {
-			delegate?.chatToolbarMicDidExitListeningMode()
+			if executeChatToolbarDelegateMethods {
+				delegate?.chatToolbarMicDidExitListeningMode()
+			}
 			
 			UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.5, options: .curveEaseInOut, animations: {
 				self.micButton.transform = self.micButton.transform.scaledBy(x: 5/3, y: 5/3)
@@ -71,7 +77,9 @@ public class ORBChatToolbar: UIView {
 				self.moreButton.isUserInteractionEnabled = true
 			})
 		}) {
-			delegate?.chatToolbarMicDidEnterListeningMode()
+			if executeChatToolbarDelegateMethods {
+				delegate?.chatToolbarMicDidEnterListeningMode()
+			}
 			
 			UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.5, options: .curveEaseInOut, animations: {
 				self.micButton.transform = self.micButton.transform.scaledBy(x: 0.6, y: 0.6)
@@ -86,7 +94,7 @@ public class ORBChatToolbar: UIView {
 			})
 		}
 		
-		listeningAnimation.toggle(isListening: micButton.isSelected)
+		speakerGrillAnimation.toggle(isListening: micButton.isSelected)
 	}
 }
 
@@ -97,7 +105,7 @@ public class MicButton: UIAction {
 	}
 }
 
-private class ListeningAnimation: UIView {
+private class SpeakerGrillAnimation: UIView {
 	private var speakerGrills = [UIView]()
 	private enum loops { case a; case b }
 	private var isListening = false
