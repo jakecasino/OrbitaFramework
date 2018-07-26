@@ -6,8 +6,6 @@
 //  Copyright © 2018 Jake Casino. All rights reserved.
 //
 
-import UIKit
-
 extension UIView {
 	public func matchFrame(to view: Any) {
 		if let view = view as? UIView {
@@ -48,8 +46,8 @@ extension UIView {
 		}
 	}
 	
-	public convenience init(addTo view: UIView) {
-		self.init(frame: CGRect.zero)
+	@objc public convenience init(addTo view: UIView) {
+		self.init(frame: .zero)
 		view.addSubview(self)
 	}
 	
@@ -92,7 +90,11 @@ extension UIView {
 							padding = paddingInsets.top
 						} else { printErrorForPadding() }
 					}
-					if let view = view { if #available(iOS 11.0, *) { safeArea = view.safeAreaInsets.top } }
+					if let view = view {
+						if #available(iOS 11.0, *) {
+							safeArea = view.safeAreaInsets.top
+						}
+					}
 					return 0 + padding + safeArea
 				
 				case .middle:
@@ -104,7 +106,11 @@ extension UIView {
 							padding = paddingInsets.bottom
 						} else { printErrorForPadding() }
 					}
-					if let view = view { if #available(iOS 11.0, *) { safeArea = view.safeAreaInsets.bottom } }
+					if let view = view {
+						if #available(iOS 11.0, *) {
+							safeArea = view.safeAreaInsets.bottom
+						}
+					}
 					return superview.bounds.height - bounds.height - padding - safeArea
 				
 				case .left, .leftMinusPadding:
@@ -220,10 +226,11 @@ extension UIView {
 	}
 	
 	private func resizer(width: Any?, height: Any?, considersSafeAreaFrom view: UIView?) {
-		guard let superview = superview else { error.regarding(self, explanation: "Could not resize view because there was no reference to a superview."); return }
 		
 		func transform(_ length: Any) -> CGFloat {
 			if let length = length as? boundingAreas {
+				guard let superview = superview else { error.regarding(self, explanation: "Could not resize view because there was no reference to a superview."); return 0 }
+				
 				var padding: CGFloat = 0
 				var safeArea: CGFloat = 0
 				

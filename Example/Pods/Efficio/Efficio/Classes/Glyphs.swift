@@ -5,8 +5,6 @@
 //  Created by Jake Casino on 7/21/18.
 //
 
-import UIKit
-
 public class Glyphs { }
 
 public class Glyph: UIImageView {

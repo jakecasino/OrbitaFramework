@@ -5,9 +5,13 @@
 //  Created by Jake Casino on 7/7/18.
 //
 
-import Foundation
-
 extension UILabel {
+	
+	public convenience init(addTo view: UIView) {
+		self.init(frame: .zero)
+		view.addSubview(self)
+	}
+	
 	public convenience init(addTo view: UIView?, text TEXT: String, font FONT: UIFont, constrainWidthTo constrainedWidth: CGFloat, numberOfLines NUMBEROFLINES: Int) {
 		if let view = view { self.init(addTo: view) }
 		else { self.init() }
@@ -33,7 +37,7 @@ extension UILabel {
 	public static func estimateHeight(text: String, constrainWidthTo constrainedWidth: CGFloat, font: UIFont) -> CGFloat {
 		let size = CGSize(width: constrainedWidth, height: CGFloat.greatestFiniteMagnitude)
 		let options = NSStringDrawingOptions.usesFontLeading.union(.usesLineFragmentOrigin)
-		let estimatedFrame = NSString(string: text).boundingRect(with: size, options: options, attributes: [NSAttributedString.Key.font: font], context: nil)
+		let estimatedFrame = NSString(string: text).boundingRect(with: size, options: options, attributes: [kCTFontAttributeName as NSAttributedStringKey: font], context: nil)
 		
 		return estimatedFrame.height
 	}

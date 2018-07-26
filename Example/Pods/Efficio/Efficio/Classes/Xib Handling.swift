@@ -5,8 +5,6 @@
 //  Created by Jake Casino on 7/20/18.
 //
 
-import UIKit
-
 extension UIView {
 	public func loadXib(named name: String) {
 		Bundle.main.loadNibNamed(name, owner: self, options: nil)

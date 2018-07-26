@@ -6,8 +6,6 @@
 //  Copyright © 2018 Jake Casino. All rights reserved.
 //
 
-import UIKit
-
 // UIColor Standard Colors Library
 extension UIColor {
 	public static var whiteF8: UIColor { return UIColor.from(RGB: [248, 248, 248]) }
@@ -83,16 +81,17 @@ extension UIColor {
 	}
 	
 	public static func from(RGB values: [CGFloat]) -> UIColor {
-		func checkForErrorsInRGBComponents() {
-			for value in values {
-				error.regarding(value, when: { () -> (Bool) in
-					(value < RGBColor.minValue) || (value > RGBColor.maxValue)
-				}, explanation: "Value is out of the RGB range.")
-			}
+		func checkForErrorsInRGBComponents(_ values: [CGFloat]) {
+			/* for value in values {
+				if (value < RGBColor.minValue) || (value > RGBColor.maxValue) {
+					error.regarding(values, explanation: "One or more of the values are out of the RGB range. RGBValues: \(values)")
+					break
+				}
+			} */
 			
 			error.regarding(values, when: { () -> (Bool) in
 				values.count > 3
-			}, explanation: "More than 3 values when initializing. Only first three values will be used.")
+			}, explanation: "More than 3 RGB values were specified. Only first three values will be used.")
 		}
 		
 		func RGB(toUIColor values: [CGFloat]) -> [CGFloat] {
@@ -103,7 +102,7 @@ extension UIColor {
 			return newValues
 		}
 		
-		checkForErrorsInRGBComponents()
+		checkForErrorsInRGBComponents(values)
 		let rgb = RGB(toUIColor: values)
 		return UIColor(red: rgb[0], green: rgb[1], blue: rgb[2], alpha: 1)
 	}

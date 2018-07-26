@@ -6,8 +6,6 @@
 //  Copyright © 2018 Jake Casino. All rights reserved.
 //
 
-import UIKit
-
 public enum corners {
 	case extraSmall
 	case small
@@ -26,6 +24,7 @@ extension UIView {
 		case opacity
 		case borderColor
 		case borderWidth
+		case glyph
 		case glyphEdgeInsets
 	}
 	
@@ -59,6 +58,10 @@ extension UIView {
 				trait = "border width"
 				expectedType = "CGFloat"
 				break
+			case .glyph:
+				trait = "glyph image"
+				expectedType = "UIImage"
+				break
 			case .glyphEdgeInsets:
 				trait = "glyph edge insets"
 				expectedType = "Double"
@@ -75,6 +78,8 @@ extension UIView {
 				guard let color = (trait.value as? UIColor) else { errorFor(trait.key); break }
 				view.backgroundColor = color
 				
+				guard let action = (view as? UIAction) else { break }
+				action.baseColor = color
 			case .corners:
 				func errorFor(_ value: corners) {
 					error.regarding(view, explanation: "Corners could not \(value) because value was less than zero.")
@@ -117,8 +122,13 @@ extension UIView {
 				view.layer.masksToBounds = value
 				
 			case .opacity:
-				guard let value = (trait.value as? Double) else { errorFor(trait.key); break }
-				view.alpha = CGFloat(value)
+				if let value = (trait.value as? CGFloat) {
+					view.alpha = value
+				} else if let value = (trait.value as? Double) {
+					view.alpha = CGFloat(value)
+				} else if let value = (trait.value as? Int) {
+					view.alpha = CGFloat(value)
+				} else { errorFor(trait.key); break }
 				
 			case .borderColor:
 				guard let value = (trait.value as? UIColor) else { errorFor(trait.key); break }
@@ -127,7 +137,14 @@ extension UIView {
 			case .borderWidth:
 				guard let value = (trait.value as? Double) else { errorFor(trait.key); break }
 				view.layer.borderWidth = CGFloat(value)
+				break
 				
+			case .glyph:
+				guard let action = (view as? UIAction) else { error.regarding(view, explanation: "Could not set glyph edge insets because view was not a UIAction."); break }
+				if let value = (trait.value as? UIImage) {
+					action.setImage(value, for: .normal)
+				}
+				break
 			case .glyphEdgeInsets:
 				guard let action = (view as? UIAction) else { error.regarding(view, explanation: "Could not set glyph edge insets because view was not a UIAction."); break }
 				if let value = (trait.value as? CGFloat) {
@@ -161,6 +178,7 @@ extension UIView {
 			objc_setAssociatedObject(self, &UIView.associationKey_shadow, newValue, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN)
 		}
 	}
+	
 	public func dropShadow(opacity: Float, x: CGFloat, y: CGFloat, blur: CGFloat, spread: CGFloat) {
 		guard let superview = superview else {
 			error.regarding(self, explanation: "Could not resize view because there was no reference to a superview.")
@@ -173,6 +191,12 @@ extension UIView {
 	
 	public func updateShadowFrame() {
 		if let shadow = shadow { shadow.matchFrame(to: self) }
+	}
+	
+	public func removeDropShadow() {
+		guard let shadow = shadow else { return }
+		shadow.removeFromSuperview()
+		self.shadow = nil
 	}
 	
 	private class Shadow: UIView {

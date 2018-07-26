@@ -6,8 +6,6 @@
 //  Copyright © 2018 Jake Casino. All rights reserved.
 //
 
-import Foundation
-
 public protocol UINestedCollectionView {
 	var collectionView: UICollectionView! { get set }
 }
