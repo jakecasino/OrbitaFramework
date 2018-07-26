@@ -17,7 +17,7 @@ public class ORBChatToolbar: UIView {
 	@IBOutlet public var delegate: ORBChatToolbarDelegate?
 	private var needsToSetupAutoLayoutAlignment = true
 	
-	@IBOutlet public var micButton: MicButton!
+	@IBOutlet private var micButton: MicButton!
 	@IBOutlet weak var keyboardButton: UIAction!
 	@IBOutlet weak var moreButton: UIAction!
 	
@@ -90,14 +90,10 @@ public class ORBChatToolbar: UIView {
 	}
 }
 
-public class MicButton: UIAction {
+private class MicButton: UIAction {
 	class sizes {
 		class var minimized: CGFloat { return 76 * 0.6 }
 		class var maximized: CGFloat { return 76 }
-	}
-	
-	public override func awakeFromNib() {
-		style(self, [.backgroundColor: UIColor.red])
 	}
 }
 
