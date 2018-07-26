@@ -23,7 +23,7 @@ public class ORBChatToolbar: UIView {
 	
 	private var listeningAnimation: ListeningAnimation!
 	
-	required init?(coder aDecoder: NSCoder) {
+	required public init?(coder aDecoder: NSCoder) {
 		super.init(coder: aDecoder)
 		
 		loadXib(forClass: ORBChatToolbar.self, named: "ChatToolbar")
@@ -137,7 +137,7 @@ private class ListeningAnimation: UIView {
 				addSubview(grill)
 				grill.move(x: origins.center, y: origins.middle)
 				
-				let delay = Double.random(in: 0...1)
+				let delay = Double(Double(arc4random()) / Double.greatestFiniteMagnitude)
 				
 				startGrillAnimation(loop: .a, grill: grill, delay: delay)
 			}
