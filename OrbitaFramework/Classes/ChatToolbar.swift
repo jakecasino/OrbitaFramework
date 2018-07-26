@@ -90,7 +90,7 @@ public class ORBChatToolbar: UIView {
 	}
 }
 
-private class MicButton: UIAction {
+public class MicButton: UIAction {
 	class sizes {
 		class var minimized: CGFloat { return 76 * 0.6 }
 		class var maximized: CGFloat { return 76 }
