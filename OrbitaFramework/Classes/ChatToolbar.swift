@@ -137,7 +137,7 @@ private class ListeningAnimation: UIView {
 				addSubview(grill)
 				grill.move(x: origins.center, y: origins.middle)
 				
-				let delay = Double(Double(arc4random()) / Double.greatestFiniteMagnitude)
+				let delay = Double(arc4random()) / Double(UINT32_MAX)
 				
 				startGrillAnimation(loop: .a, grill: grill, delay: delay)
 			}
