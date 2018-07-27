@@ -88,16 +88,14 @@ public class ORBChatToolbarInteractionView: UIView {
 				self.keyboardTextField.alpha = 0
 			}, completion: { (_) in
 				self.keyboardTextField.isHidden = true
+				self.delegate?.chatToolbarKeyboardButtonWasDeselected()
 				toggleMic()
 			})
 		} else { toggleMic() }
 	}
 	
 	@objc private func keyboardButtonWasTapped(_ gesture: UITapGestureRecognizer) {
-		keyboardButton.toggle(inactiveState: {
-			delegate?.chatToolbarKeyboardButtonWasDeselected()
-			switchButtonStates(focusOn: nil)
-		}, activeState: {
+		keyboardButton.toggle(inactiveState: { }, activeState: {
 			delegate?.chatToolbarKeyboardButtonWasSelected()
 			switchButtonStates(focusOn: keyboardButton)
 			micButton.changeSizeState(to: .extraSmall)
