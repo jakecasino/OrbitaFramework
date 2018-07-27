@@ -68,22 +68,20 @@ public class ORBChatToolbar: UIView {
 	
 	@objc private func keyboardButtonWasTapped(_ gesture: UITapGestureRecognizer) {
 		keyboardButton.toggle(inactiveState: {
-			delegate?.chatToolbarKeyboardButtonWasDeselected()
-			changeAllButtonFocusStates(to: .normal)
-		}) {
+		}, activeState: {
 			delegate?.chatToolbarKeyboardButtonWasSelected()
 			focusOnButton(keyboardButton)
-		}
+		}, hasHapticFeedback: true)
 	}
 	
 	@objc private func moreButtonWasTapped(_ gesture: UITapGestureRecognizer) {
 		moreButton.toggle(inactiveState: {
 			delegate?.chatToolbarMoreButtonWasDeselected()
 			changeAllButtonFocusStates(to: .normal)
-		}) {
+		}, activeState: {
 			delegate?.chatToolbarMoreButtonWasSelected()
 			focusOnButton(moreButton)
-		}
+		}, hasHapticFeedback: true)
 	}
 	
 	private func changeAllButtonFocusStates(to state: buttonFocusStates) {
@@ -149,7 +147,7 @@ public class ORBChatToolbar: UIView {
 				self.keyboardButton.isUserInteractionEnabled = true
 				self.moreButton.isUserInteractionEnabled = true
 			})
-		}) {
+		}, activeState: {
 			if executeChatToolbarDelegateMethods {
 				delegate?.chatToolbarMicDidEnterListeningMode()
 			}
@@ -161,7 +159,7 @@ public class ORBChatToolbar: UIView {
 				self.keyboardButton.isUserInteractionEnabled = false
 				self.moreButton.isUserInteractionEnabled = false
 			})
-		}
+		}, hasHapticFeedback: true)
 		
 		speakerGrillAnimation.toggle(isListening: micButton.isSelected)
 	}
