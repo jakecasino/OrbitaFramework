@@ -1,6 +1,7 @@
 use_frameworks!
 target 'OrbitaFramework_Example' do
   pod 'OrbitaFramework', :path => '../'
-  pod 'Efficio', :git => 'https://github.com/jakecasino/Efficio', :branch => 'master'
+  pod 'Efficio', :path => '../../Efficio'
+  # pod 'Efficio', :git => 'https://github.com/jakecasino/Efficio', :branch => 'master'
   
 end

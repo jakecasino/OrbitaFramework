@@ -4,25 +4,19 @@ PODS:
     - Efficio (~> 0.2.0)
 
 DEPENDENCIES:
-  - Efficio (from `https://github.com/jakecasino/Efficio`, branch `master`)
+  - Efficio (from `../../Efficio`)
   - OrbitaFramework (from `../`)
 
 EXTERNAL SOURCES:
   Efficio:
-    :branch: master
-    :git: https://github.com/jakecasino/Efficio
+    :path: "../../Efficio"
   OrbitaFramework:
     :path: "../"
 
-CHECKOUT OPTIONS:
-  Efficio:
-    :commit: a91390d7d67c8e84310adf8f0b14559273393ea8
-    :git: https://github.com/jakecasino/Efficio
-
 SPEC CHECKSUMS:
-  Efficio: 4e337d2af5872d6e0085eae28941cfef253abe9f
+  Efficio: 24a85078f36e7f83294b6a0fdb43bfb327674c37
   OrbitaFramework: de7561a4c85eebebfefb3e35dc3e44e7aa5cdd3e
 
-PODFILE CHECKSUM: 798a0c903a1052137d17c4525acca1254abe64e4
+PODFILE CHECKSUM: 73e612448930c8f031cba884d0952974291f8341
 
 COCOAPODS: 1.5.3

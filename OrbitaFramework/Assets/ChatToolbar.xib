@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14295.6" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14270.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -20,11 +20,11 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <rect key="frame" x="0.0" y="0.0" width="375" height="110"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="508-gt-vzk" customClass="MicButton" customModule="OrbitaFramework" customModuleProvider="target">
-                    <rect key="frame" x="149.5" y="575" width="76" height="76"/>
+                    <rect key="frame" x="149.5" y="34" width="76" height="76"/>
                     <color key="backgroundColor" red="0.0" green="0.68235294117647061" blue="0.93725490196078431" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     <constraints>
                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="34" id="2uv-VB-I13"/>
@@ -47,7 +47,7 @@
                     </userDefinedRuntimeAttributes>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zLk-9p-yyk" customClass="UIAction" customModule="Efficio">
-                    <rect key="frame" x="16" y="596" width="34" height="34"/>
+                    <rect key="frame" x="16" y="55" width="34" height="34"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="34" id="TJ1-LI-Auj"/>
@@ -65,7 +65,7 @@
                     </userDefinedRuntimeAttributes>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b3w-am-wKG" customClass="UIAction" customModule="Efficio">
-                    <rect key="frame" x="325" y="596" width="34" height="34"/>
+                    <rect key="frame" x="325" y="55" width="34" height="34"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="34" id="XK0-Nq-GuB"/>
@@ -83,16 +83,18 @@
                     </userDefinedRuntimeAttributes>
                 </button>
             </subviews>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="508-gt-vzk" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Eba-7w-ToU"/>
                 <constraint firstItem="zLk-9p-yyk" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="Zj9-qa-W2W"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="b3w-am-wKG" secondAttribute="trailing" constant="16" id="fOQ-DK-Gvi"/>
                 <constraint firstItem="b3w-am-wKG" firstAttribute="centerY" secondItem="zLk-9p-yyk" secondAttribute="centerY" id="iLB-nv-HHf"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="508-gt-vzk" secondAttribute="bottom" constant="16" id="mAU-zB-j9o"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="508-gt-vzk" secondAttribute="bottom" id="mAU-zB-j9o"/>
                 <constraint firstItem="508-gt-vzk" firstAttribute="centerY" secondItem="zLk-9p-yyk" secondAttribute="centerY" id="pOV-x1-H3y"/>
             </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="33.5" y="-225"/>
         </view>
     </objects>
     <resources>

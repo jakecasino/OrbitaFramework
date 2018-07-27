@@ -10,6 +10,10 @@ import Efficio
 @objc public protocol ORBChatToolbarDelegate {
 	func chatToolbarMicDidEnterListeningMode()
 	func chatToolbarMicDidExitListeningMode()
+	func chatToolbarKeyboardButtonWasSelected()
+	func chatToolbarKeyboardButtonWasDeselected()
+	func chatToolbarMoreButtonWasSelected()
+	func chatToolbarMoreButtonWasDeselected()
 }
 
 public class ORBChatToolbar: UIView {
@@ -20,6 +24,7 @@ public class ORBChatToolbar: UIView {
 	@IBOutlet private var micButton: MicButton!
 	@IBOutlet weak var keyboardButton: UIAction!
 	@IBOutlet weak var moreButton: UIAction!
+	private enum buttonFocusStates { case normal; case focused; case unfocused; }
 	
 	private var speakerGrillAnimation: SpeakerGrillAnimation!
 	
@@ -28,22 +33,17 @@ public class ORBChatToolbar: UIView {
 		
 		loadXib(forClass: ORBChatToolbar.self, named: "ChatToolbar")
 		setupXibView(view, inContainer: self)
+		clipsToBounds = false
 		
 		style(micButton, [.glyphEdgeInsets: 10])
 		micButton.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(micButtonWasTapped(_:))))
+		keyboardButton.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(keyboardButtonWasTapped(_:))))
+		moreButton.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(moreButtonWasTapped(_:))))
 	}
 	
 	public override func didMoveToSuperview() {
 		speakerGrillAnimation = SpeakerGrillAnimation(addTo: view, linkToMicButton: micButton)
-	}
-	
-	public func setupAutoLayoutAlignment(in view: UIView) {
-		if needsToSetupAutoLayoutAlignment {
-			if #available(iOS 11.0, *) {
-				speakerGrillAnimation.resize(addToWidth: nil, addToHeight: -(view.safeAreaInsets.bottom))
-				needsToSetupAutoLayoutAlignment = false
-			}
-		}
+		backgroundColor = UIColor.clear
 	}
 	
 	public func changeMicButtonAppearance(newBackgroundColor: UIColor?, newGlyphNamed newGlyphName: String?) {
@@ -56,7 +56,84 @@ public class ORBChatToolbar: UIView {
 	}
 	
 	@objc private func micButtonWasTapped(_ gesture: UITapGestureRecognizer) {
+		if !micButton.isSelected {
+			focusOnButton(micButton)
+			micButton.isSelected = false
+		} else {
+			changeAllButtonFocusStates(to: .normal)
+			micButton.isSelected = true
+		}
 		toggleListeningModeAnimations(executeChatToolbarDelegateMethods: true)
+	}
+	
+	@objc private func keyboardButtonWasTapped(_ gesture: UITapGestureRecognizer) {
+		keyboardButton.toggle(inactiveState: {
+			delegate?.chatToolbarKeyboardButtonWasDeselected()
+			changeAllButtonFocusStates(to: .normal)
+		}) {
+			delegate?.chatToolbarKeyboardButtonWasSelected()
+			focusOnButton(keyboardButton)
+		}
+	}
+	
+	@objc private func moreButtonWasTapped(_ gesture: UITapGestureRecognizer) {
+		moreButton.toggle(inactiveState: {
+			delegate?.chatToolbarMoreButtonWasDeselected()
+			changeAllButtonFocusStates(to: .normal)
+		}) {
+			delegate?.chatToolbarMoreButtonWasSelected()
+			focusOnButton(moreButton)
+		}
+	}
+	
+	private func changeAllButtonFocusStates(to state: buttonFocusStates) {
+		let buttons: [UIAction] = [micButton, keyboardButton, moreButton]
+		buttons.forEach { changeButtonFocusState($0, state) }
+	}
+	
+	private func focusOnButton(_ selectedButton: UIAction) {
+		let buttons: [UIAction] = [micButton, keyboardButton, moreButton]
+		buttons.forEach { (button) in
+			if button == selectedButton { changeButtonFocusState(selectedButton, .focused) }
+			else { changeButtonFocusState(button, .unfocused) }
+		}
+	}
+	
+	private func changeButtonFocusState(_ button: UIAction, _ buttonState: buttonFocusStates) {
+		UIView.animate(withDuration: 0.15) {
+			switch buttonState {
+			case .normal:
+				if button == self.micButton {
+					self.style(button, [.backgroundColor: UIColor.orbitaBlue, .opacity: 1])
+					self.micButton.changeSizeState(to: .large)
+				}
+				else { self.style(button, [.tintColor: UIColor.whiteC, .opacity: 1]) }
+				button.isSelected = false
+				break
+				
+			case .focused, .unfocused:
+				let focusColor: UIColor
+				let focusOpacity: Double
+				
+				if buttonState == .focused {
+					focusColor = UIColor.orbitaBlue
+					focusOpacity = 1
+					button.isSelected = true
+				} else {
+					focusColor = UIColor.whiteC
+					focusOpacity = 0.3
+					button.isSelected = false
+				}
+				
+				if button == self.micButton {
+					self.style(button, [.backgroundColor: focusColor, .opacity: focusOpacity])
+					self.micButton.changeSizeState(to: .small)
+				}
+				else { self.style(button, [.tintColor: focusColor, .opacity: focusOpacity]) }
+				
+				break
+			}
+		}
 	}
 	
 	public func toggleListeningModeAnimations(executeChatToolbarDelegateMethods: Bool) {
@@ -64,10 +141,6 @@ public class ORBChatToolbar: UIView {
 			if executeChatToolbarDelegateMethods {
 				delegate?.chatToolbarMicDidExitListeningMode()
 			}
-			
-			UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.5, options: .curveEaseInOut, animations: {
-				self.micButton.transform = self.micButton.transform.scaledBy(x: 5/3, y: 5/3)
-			})
 			
 			UIView.animate(withDuration: 0.85, animations: {
 				self.style(self.keyboardButton, [.opacity: 1])
@@ -80,10 +153,6 @@ public class ORBChatToolbar: UIView {
 			if executeChatToolbarDelegateMethods {
 				delegate?.chatToolbarMicDidEnterListeningMode()
 			}
-			
-			UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.5, options: .curveEaseInOut, animations: {
-				self.micButton.transform = self.micButton.transform.scaledBy(x: 0.6, y: 0.6)
-			})
 			
 			UIView.animate(withDuration: 0.15, animations: {
 				self.style(self.keyboardButton, [.opacity: 0])
@@ -99,9 +168,28 @@ public class ORBChatToolbar: UIView {
 }
 
 public class MicButton: UIAction {
+	public enum micButtonSizeStates { case small; case large }
+	public var sizeState: micButtonSizeStates = .large
 	class sizes {
 		class var minimized: CGFloat { return 76 * 0.6 }
 		class var maximized: CGFloat { return 76 }
+	}
+	
+	func changeSizeState(to state: micButtonSizeStates) {
+		UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 0.6, options: .curveEaseInOut, animations: {
+			switch state {
+			case .small:
+				if self.sizeState != .small {
+					self.transform = self.transform.scaledBy(x: 0.6, y: 0.6)
+					self.sizeState = .small
+				}
+			case .large:
+				if self.sizeState != .large {
+					self.transform = self.transform.scaledBy(x: 5/3, y: 5/3)
+					self.sizeState = .large
+				}
+			}
+		})
 	}
 }
 
