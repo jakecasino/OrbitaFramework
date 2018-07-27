@@ -77,8 +77,6 @@ public class ORBChatToolbarInteractionView: UIView {
 			if micButton.isSelected {
 				switchButtonStates(focusOn: nil)
 				micButton.isSelected = true
-			} else {
-				micButton.changeSizeState(to: .small)
 			}
 			toggleListeningModeAnimations(executeChatToolbarDelegateMethods: true)
 		}
@@ -152,6 +150,7 @@ public class ORBChatToolbarInteractionView: UIView {
 	
 	public func toggleListeningModeAnimations(executeChatToolbarDelegateMethods: Bool) {
 		micButton.toggle(inactiveState: {
+			micButton.changeSizeState(to: .large)
 			if executeChatToolbarDelegateMethods {
 				delegate?.chatToolbarMicDidExitListeningMode()
 			}
@@ -164,6 +163,7 @@ public class ORBChatToolbarInteractionView: UIView {
 				self.moreButton.isUserInteractionEnabled = true
 			})
 		}, activeState: {
+			micButton.changeSizeState(to: .small)
 			if executeChatToolbarDelegateMethods {
 				delegate?.chatToolbarMicDidEnterListeningMode()
 			}
