@@ -17,17 +17,27 @@ import Efficio
 }
 
 public class ORBChatToolbarInteractionView: UIView {
+	
+	// Properties
 	@IBOutlet private var view: UIView!
 	@IBOutlet public var delegate: ORBChatToolbarDelegate?
-	private var needsToSetupAutoLayoutAlignment = true
+	@IBOutlet weak var keyboardTextField: UITextField!
+	private var speakerGrillAnimation: SpeakerGrillAnimation!
 	
-	@IBOutlet private var micButton: MicButton!
+	@IBOutlet private var micButton: ORBChatToolbarMicButton!
 	@IBOutlet weak var keyboardButton: UIAction!
 	@IBOutlet weak var moreButton: UIAction!
 	private enum buttonFocusStates { case normal; case focused; case unfocused; }
+	private var buttons: [UIAction]!
 	
-	private var speakerGrillAnimation: SpeakerGrillAnimation!
+	@IBOutlet weak var micButtonLargeHeightConstraint: NSLayoutConstraint!
+	@IBOutlet weak var keyboardButtonSizeConstraint: NSLayoutConstraint!
+	@IBOutlet weak var keyboardButtonLeadingConstraint: NSLayoutConstraint!
+	@IBOutlet weak var moreButtonTrailingConstraint: NSLayoutConstraint!
+	private var needsToSetupAutoLayoutAlignment = true
 	
+	
+	// Methods
 	required public init?(coder aDecoder: NSCoder) {
 		super.init(coder: aDecoder)
 		
@@ -35,8 +45,13 @@ public class ORBChatToolbarInteractionView: UIView {
 		setupXibView(view, inContainer: self)
 		clipsToBounds = false
 		
+		buttons = [micButton, keyboardButton, moreButton]
+		
 		style(micButton, [.glyphEdgeInsets: 10])
 		micButton.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(micButtonWasTapped(_:))))
+		micButton.sizeExtraSmall = keyboardButtonSizeConstraint.constant
+		micButton.sizeLarge = micButtonLargeHeightConstraint.constant
+		
 		keyboardButton.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(keyboardButtonWasTapped(_:))))
 		moreButton.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(moreButtonWasTapped(_:))))
 	}
@@ -56,82 +71,83 @@ public class ORBChatToolbarInteractionView: UIView {
 	}
 	
 	@objc private func micButtonWasTapped(_ gesture: UITapGestureRecognizer) {
-		if !micButton.isSelected {
-			focusOnButton(micButton)
-			micButton.isSelected = false
-		} else {
-			changeAllButtonFocusStates(to: .normal)
-			micButton.isSelected = true
+		func toggleMic() {
+			micButton.changeSizeState(to: .large)
+			realignChatToolbarButton(micButton)
+			if micButton.isSelected {
+				switchButtonStates(focusOn: nil)
+				micButton.isSelected = true
+			} else {
+				micButton.changeSizeState(to: .small)
+			}
+			toggleListeningModeAnimations(executeChatToolbarDelegateMethods: true)
 		}
-		toggleListeningModeAnimations(executeChatToolbarDelegateMethods: true)
+		
+		if keyboardTextField.isHidden == false {
+			UIView.animate(withDuration: 0.15, animations: {
+				self.keyboardTextField.alpha = 0
+			}, completion: { (_) in
+				self.keyboardTextField.isHidden = true
+				toggleMic()
+			})
+		} else { toggleMic() }
 	}
 	
 	@objc private func keyboardButtonWasTapped(_ gesture: UITapGestureRecognizer) {
 		keyboardButton.toggle(inactiveState: {
 			delegate?.chatToolbarKeyboardButtonWasDeselected()
-			changeAllButtonFocusStates(to: .normal)
+			switchButtonStates(focusOn: nil)
 		}, activeState: {
 			delegate?.chatToolbarKeyboardButtonWasSelected()
-			focusOnButton(keyboardButton)
+			switchButtonStates(focusOn: keyboardButton)
+			micButton.changeSizeState(to: .extraSmall)
+			
+			let offScreen = (padding.extraLarge * 4)
+			
+			UIView.animate(withDuration: 0.15, animations: {
+				self.keyboardButton.move(addToX: -(offScreen), addToY: nil)
+				self.micButton.move(x: origins.left, y: nil)
+				self.micButton.move(addToX: self.keyboardButtonLeadingConstraint.constant, addToY: nil)
+				self.moreButton.move(addToX: offScreen, addToY: nil)
+			}, completion: { (_) in
+				self.keyboardTextField.isHidden = false
+				UIView.animate(withDuration: 0.15, animations: {
+					self.keyboardTextField.alpha = 1
+				})
+			})
 		}, hasHapticFeedback: true)
 	}
 	
 	@objc private func moreButtonWasTapped(_ gesture: UITapGestureRecognizer) {
 		moreButton.toggle(inactiveState: {
 			delegate?.chatToolbarMoreButtonWasDeselected()
-			changeAllButtonFocusStates(to: .normal)
+			switchButtonStates(focusOn: nil)
 		}, activeState: {
 			delegate?.chatToolbarMoreButtonWasSelected()
-			focusOnButton(moreButton)
+			switchButtonStates(focusOn: moreButton)
 		}, hasHapticFeedback: true)
 	}
 	
-	private func changeAllButtonFocusStates(to state: buttonFocusStates) {
-		let buttons: [UIAction] = [micButton, keyboardButton, moreButton]
-		buttons.forEach { changeButtonFocusState($0, state) }
-	}
-	
-	private func focusOnButton(_ selectedButton: UIAction) {
-		let buttons: [UIAction] = [micButton, keyboardButton, moreButton]
-		buttons.forEach { (button) in
-			if button == selectedButton { changeButtonFocusState(selectedButton, .focused) }
-			else { changeButtonFocusState(button, .unfocused) }
+	private func switchButtonStates(focusOn selectedButton: UIAction?) {
+		buttons.forEach {
+			if $0 == selectedButton {
+				$0.isSelected = true
+			} else {
+				$0.isSelected = false
+				realignChatToolbarButton($0)
+			}
 		}
 	}
 	
-	private func changeButtonFocusState(_ button: UIAction, _ buttonState: buttonFocusStates) {
+	private func realignChatToolbarButton(_ button: UIAction) {
 		UIView.animate(withDuration: 0.15) {
-			switch buttonState {
-			case .normal:
-				if button == self.micButton {
-					self.style(button, [.backgroundColor: UIColor.orbitaBlue, .opacity: 1])
-					self.micButton.changeSizeState(to: .large)
-				}
-				else { self.style(button, [.tintColor: UIColor.whiteC, .opacity: 1]) }
-				button.isSelected = false
-				break
-				
-			case .focused, .unfocused:
-				let focusColor: UIColor
-				let focusOpacity: Double
-				
-				if buttonState == .focused {
-					focusColor = UIColor.orbitaBlue
-					focusOpacity = 1
-					button.isSelected = true
-				} else {
-					focusColor = UIColor.whiteC
-					focusOpacity = 0.3
-					button.isSelected = false
-				}
-				
-				if button == self.micButton {
-					self.style(button, [.backgroundColor: focusColor, .opacity: focusOpacity])
-					self.micButton.changeSizeState(to: .small)
-				}
-				else { self.style(button, [.tintColor: focusColor, .opacity: focusOpacity]) }
-				
-				break
+			if button == self.micButton {
+				button.move(x: origins.center, y: nil)
+			} else if button == self.keyboardButton {
+				button.move(x: self.keyboardButtonLeadingConstraint.constant, y: nil)
+			} else if button == self.moreButton {
+				button.move(x: origins.right, y: nil)
+				button.move(addToX: -(self.moreButtonTrailingConstraint.constant), addToY: nil)
 			}
 		}
 	}
@@ -170,15 +186,15 @@ public class ORBChatToolbarInteractionView: UIView {
 		private var speakerGrills = [UIView]()
 		private enum loops { case a; case b }
 		private var isListening = false
-		private var micButton: MicButton!
+		private var micButton: ORBChatToolbarMicButton!
 		
-		fileprivate convenience init(addTo view: UIView, linkToMicButton MIC_BUTTON: MicButton) {
+		fileprivate convenience init(addTo view: UIView, linkToMicButton MIC_BUTTON: ORBChatToolbarMicButton) {
 			self.init(frame: .zero)
 			view.insertSubview(self, at: 0)
 			micButton = MIC_BUTTON
 			
 			let numberOfGrills: Int
-			let estimatedNumberOfGrills = Int((((bounds.width - MicButton.sizes.minimized) / 2) - padding.extraLarge) / (SpeakerGrill.width + SpeakerGrill.spacing)) * 2
+			let estimatedNumberOfGrills = Int((((bounds.width - ORBChatToolbarMicButton.sizeSmall) / 2) - padding.extraLarge) / (SpeakerGrill.width + SpeakerGrill.spacing)) * 2
 			if (estimatedNumberOfGrills % 2) == 0 {
 				numberOfGrills = estimatedNumberOfGrills
 			} else {
@@ -215,10 +231,10 @@ public class ORBChatToolbarInteractionView: UIView {
 					
 					for (index, grill) in self.speakerGrills.enumerated() {
 						if index < (self.speakerGrills.count / 2) {
-							let x = ((self.bounds.width - MicButton.sizes.minimized) / 2) - ((SpeakerGrill.width + SpeakerGrill.spacing) * CGFloat(index + 1))
+							let x = ((self.bounds.width - ORBChatToolbarMicButton.sizeSmall) / 2) - ((SpeakerGrill.width + SpeakerGrill.spacing) * CGFloat(index + 1))
 							grill.move(x: x, y: nil)
 						} else {
-							let x = ((self.bounds.width + MicButton.sizes.minimized) / 2) + ((SpeakerGrill.width + SpeakerGrill.spacing) * CGFloat((index - (self.speakerGrills.count / 2)) + 1))
+							let x = ((self.bounds.width + ORBChatToolbarMicButton.sizeSmall) / 2) + ((SpeakerGrill.width + SpeakerGrill.spacing) * CGFloat((index - (self.speakerGrills.count / 2)) + 1))
 							grill.move(x: x, y: nil)
 						}
 					}
@@ -272,27 +288,43 @@ public class ORBChatToolbarInteractionView: UIView {
 	}
 }
 
-internal class MicButton: UIAction {
-	public enum micButtonSizeStates { case small; case large }
-	public var sizeState: micButtonSizeStates = .large
-	class sizes {
-		class var minimized: CGFloat { return 76 * 0.6 }
-		class var maximized: CGFloat { return 76 }
-	}
+internal class ORBChatToolbarMicButton: UIAction {
+	public enum micButtonSizeStates { case extraSmall; case small; case large }
+	private var sizeState: micButtonSizeStates = .large
+	var sizeExtraSmall: CGFloat!
+	static var sizeSmall: CGFloat { return 44 }
+	var sizeLarge: CGFloat!
 	
 	func changeSizeState(to state: micButtonSizeStates) {
 		UIView.animate(withDuration: 0.24, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 0.6, options: .curveEaseInOut, animations: {
 			switch state {
+			case .extraSmall:
+				if self.sizeState == .large {
+					let scale = self.sizeExtraSmall / self.sizeLarge
+					self.transform = self.transform.scaledBy(x: scale, y: scale)
+				} else if self.sizeState == .small {
+					let scale = self.sizeExtraSmall / ORBChatToolbarMicButton.sizeSmall
+					self.transform = self.transform.scaledBy(x: scale, y: scale)
+				}
+				self.sizeState = .extraSmall
 			case .small:
-				if self.sizeState != .small {
-					self.transform = self.transform.scaledBy(x: 0.6, y: 0.6)
-					self.sizeState = .small
+				if self.sizeState == .extraSmall {
+					let scale = ORBChatToolbarMicButton.sizeSmall / self.sizeExtraSmall
+					self.transform = self.transform.scaledBy(x: scale, y: scale)
+				} else if self.sizeState == .large {
+					let scale = ORBChatToolbarMicButton.sizeSmall / self.sizeLarge
+					self.transform = self.transform.scaledBy(x: scale, y: scale)
 				}
+				self.sizeState = .small
 			case .large:
-				if self.sizeState != .large {
-					self.transform = self.transform.scaledBy(x: 5/3, y: 5/3)
-					self.sizeState = .large
+				if self.sizeState == .extraSmall {
+					let scale = self.sizeLarge / self.sizeExtraSmall
+					self.transform = self.transform.scaledBy(x: scale, y: scale)
+				} else if self.sizeState == .small {
+					let scale = self.sizeLarge / ORBChatToolbarMicButton.sizeSmall
+					self.transform = self.transform.scaledBy(x: scale, y: scale)
 				}
+				self.sizeState = .large
 			}
 		})
 	}
