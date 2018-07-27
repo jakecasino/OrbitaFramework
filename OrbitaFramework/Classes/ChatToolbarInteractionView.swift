@@ -22,6 +22,7 @@ public class ORBChatToolbarInteractionView: UIView {
 	@IBOutlet private var view: UIView!
 	@IBOutlet public var delegate: ORBChatToolbarDelegate?
 	@IBOutlet weak var keyboardTextField: UITextField!
+	public var isListening = false
 	private var speakerGrillAnimation: SpeakerGrillAnimation!
 	
 	@IBOutlet private var micButton: ORBChatToolbarMicButton!
@@ -107,6 +108,7 @@ public class ORBChatToolbarInteractionView: UIView {
 				self.moreButton.move(addToX: offScreen, addToY: nil)
 			}, completion: { (_) in
 				self.keyboardTextField.isHidden = false
+				self.keyboardTextField.becomeFirstResponder()
 				UIView.animate(withDuration: 0.15, animations: {
 					self.keyboardTextField.alpha = 1
 				})
@@ -150,6 +152,7 @@ public class ORBChatToolbarInteractionView: UIView {
 	
 	public func toggleListeningModeAnimations(executeChatToolbarDelegateMethods: Bool) {
 		micButton.toggle(inactiveState: {
+			isListening = false
 			micButton.changeSizeState(to: .large)
 			if executeChatToolbarDelegateMethods {
 				delegate?.chatToolbarMicDidExitListeningMode()
@@ -163,6 +166,7 @@ public class ORBChatToolbarInteractionView: UIView {
 				self.moreButton.isUserInteractionEnabled = true
 			})
 		}, activeState: {
+			isListening = true
 			micButton.changeSizeState(to: .small)
 			if executeChatToolbarDelegateMethods {
 				delegate?.chatToolbarMicDidEnterListeningMode()
