@@ -68,6 +68,8 @@ public class ORBChatToolbar: UIView {
 	
 	@objc private func keyboardButtonWasTapped(_ gesture: UITapGestureRecognizer) {
 		keyboardButton.toggle(inactiveState: {
+			delegate?.chatToolbarKeyboardButtonWasDeselected()
+			changeAllButtonFocusStates(to: .normal)
 		}, activeState: {
 			delegate?.chatToolbarKeyboardButtonWasSelected()
 			focusOnButton(keyboardButton)
@@ -174,7 +176,7 @@ public class MicButton: UIAction {
 	}
 	
 	func changeSizeState(to state: micButtonSizeStates) {
-		UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 0.6, options: .curveEaseInOut, animations: {
+		UIView.animate(withDuration: 0.24, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 0.6, options: .curveEaseInOut, animations: {
 			switch state {
 			case .small:
 				if self.sizeState != .small {
