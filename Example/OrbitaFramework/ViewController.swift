@@ -10,7 +10,7 @@ import UIKit
 import OrbitaFramework
 
 class ViewController: UIViewController {
-	@IBOutlet weak var ChatToolbar: ORBChatToolbar!
+	@IBOutlet weak var ChatToolbar: ORBChatToolbarInteractionView!
 	
     override func viewDidLoad() {
         super.viewDidLoad()
