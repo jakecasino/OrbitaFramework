@@ -21,7 +21,7 @@ public class ORBChatToolbarInteractionView: UIView {
 	// Properties
 	@IBOutlet private var view: UIView!
 	@IBOutlet public var delegate: ORBChatToolbarDelegate?
-	@IBOutlet weak var keyboardTextField: UITextField!
+	@IBOutlet weak public var keyboardTextField: UITextField!
 	public var isListening = false
 	private var speakerGrillAnimation: SpeakerGrillAnimation!
 	
