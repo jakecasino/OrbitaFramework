@@ -107,10 +107,10 @@
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="CXq-Hu-VBP" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="66" id="6iy-tP-SkQ"/>
-                <constraint firstItem="CXq-Hu-VBP" firstAttribute="centerY" secondItem="zLk-9p-yyk" secondAttribute="centerY" id="9wM-TG-ak4"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="CXq-Hu-VBP" secondAttribute="trailing" constant="16" id="BJI-7r-JXu"/>
                 <constraint firstItem="508-gt-vzk" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Eba-7w-ToU"/>
                 <constraint firstItem="CXq-Hu-VBP" firstAttribute="height" relation="greaterThanOrEqual" secondItem="zLk-9p-yyk" secondAttribute="height" id="JAr-uo-C3w"/>
+                <constraint firstItem="CXq-Hu-VBP" firstAttribute="bottom" secondItem="zLk-9p-yyk" secondAttribute="bottom" id="ZBz-gW-agf"/>
                 <constraint firstItem="zLk-9p-yyk" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="Zj9-qa-W2W"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="b3w-am-wKG" secondAttribute="trailing" constant="16" id="fOQ-DK-Gvi"/>
                 <constraint firstItem="b3w-am-wKG" firstAttribute="centerY" secondItem="zLk-9p-yyk" secondAttribute="centerY" id="iLB-nv-HHf"/>
