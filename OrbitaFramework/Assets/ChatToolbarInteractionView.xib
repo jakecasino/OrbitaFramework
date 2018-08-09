@@ -15,8 +15,9 @@
                 <outlet property="keyboardButton" destination="zLk-9p-yyk" id="LH9-dA-1ht"/>
                 <outlet property="keyboardButtonLeadingConstraint" destination="Zj9-qa-W2W" id="IRV-u9-3X9"/>
                 <outlet property="keyboardButtonSizeConstraint" destination="Zb5-iW-yMa" id="88I-mV-yBv"/>
-                <outlet property="keyboardTextField" destination="mBC-Ew-auy" id="0VQ-fV-kKj"/>
+                <outlet property="keyboardTextView" destination="CXq-Hu-VBP" id="QcM-Bn-A4a"/>
                 <outlet property="micButton" destination="508-gt-vzk" id="1Ip-7J-cqp"/>
+                <outlet property="micButtonCenterXConstraint" destination="Eba-7w-ToU" id="bIY-K8-yIC"/>
                 <outlet property="micButtonLargeHeightConstraint" destination="O6R-4R-f3S" id="3C0-O8-AG9"/>
                 <outlet property="moreButton" destination="b3w-am-wKG" id="Dof-7m-Aq2"/>
                 <outlet property="moreButtonTrailingConstraint" destination="fOQ-DK-Gvi" id="aQT-a0-Dvm"/>
@@ -46,8 +47,11 @@
                         <userDefinedRuntimeAttribute type="color" keyPath="accentColor">
                             <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </userDefinedRuntimeAttribute>
-                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                            <integer key="value" value="38"/>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="38"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="glyphEdgeInsets">
+                            <real key="value" value="10"/>
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </button>
@@ -87,23 +91,28 @@
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </button>
-                <textField hidden="YES" opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mBC-Ew-auy">
+                <textView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="CXq-Hu-VBP" customClass="UITextViewElement" customModule="Efficio">
                     <rect key="frame" x="66" y="612" width="293" height="34"/>
-                    <color key="backgroundColor" white="0.0" alpha="0.080000000000000002" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <nil key="textColor"/>
+                    <color key="backgroundColor" red="0.93333333333333335" green="0.93333333333333335" blue="0.93333333333333335" alpha="1" colorSpace="calibratedRGB"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <textInputTraits key="textInputTraits" returnKeyType="send"/>
-                </textField>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="12"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="textContainer.heightTracksTextView" value="YES"/>
+                    </userDefinedRuntimeAttributes>
+                </textView>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
+                <constraint firstItem="CXq-Hu-VBP" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="66" id="6iy-tP-SkQ"/>
+                <constraint firstItem="CXq-Hu-VBP" firstAttribute="centerY" secondItem="zLk-9p-yyk" secondAttribute="centerY" id="9wM-TG-ak4"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="CXq-Hu-VBP" secondAttribute="trailing" constant="16" id="BJI-7r-JXu"/>
                 <constraint firstItem="508-gt-vzk" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Eba-7w-ToU"/>
-                <constraint firstItem="mBC-Ew-auy" firstAttribute="centerY" secondItem="zLk-9p-yyk" secondAttribute="centerY" id="I2u-O1-sco"/>
-                <constraint firstItem="b3w-am-wKG" firstAttribute="trailing" secondItem="mBC-Ew-auy" secondAttribute="trailing" id="IQN-Nv-XLK"/>
-                <constraint firstItem="mBC-Ew-auy" firstAttribute="leading" secondItem="zLk-9p-yyk" secondAttribute="trailing" constant="16" id="TLP-Qe-vsB"/>
+                <constraint firstItem="CXq-Hu-VBP" firstAttribute="height" relation="greaterThanOrEqual" secondItem="zLk-9p-yyk" secondAttribute="height" id="JAr-uo-C3w"/>
                 <constraint firstItem="zLk-9p-yyk" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="Zj9-qa-W2W"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="b3w-am-wKG" secondAttribute="trailing" constant="16" id="fOQ-DK-Gvi"/>
-                <constraint firstItem="mBC-Ew-auy" firstAttribute="height" secondItem="zLk-9p-yyk" secondAttribute="height" id="g10-AB-Nia"/>
                 <constraint firstItem="b3w-am-wKG" firstAttribute="centerY" secondItem="zLk-9p-yyk" secondAttribute="centerY" id="iLB-nv-HHf"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="508-gt-vzk" secondAttribute="bottom" id="mAU-zB-j9o"/>
                 <constraint firstItem="508-gt-vzk" firstAttribute="centerY" secondItem="zLk-9p-yyk" secondAttribute="centerY" id="pOV-x1-H3y"/>
@@ -114,7 +123,7 @@
     </objects>
     <resources>
         <image name="keyboard" width="34" height="34"/>
-        <image name="mic" width="112" height="112"/>
+        <image name="mic" width="64" height="64"/>
         <image name="more" width="34" height="34"/>
     </resources>
 </document>

@@ -14,6 +14,8 @@ import Efficio
 	func chatToolbarKeyboardButtonWasDeselected()
 	func chatToolbarMoreButtonWasSelected()
 	func chatToolbarMoreButtonWasDeselected()
+	@objc optional func chatToolbarTextViewUpdateHeight()
+	@objc optional func chatToolbarTextViewDidReturn()
 }
 
 public class ORBChatToolbarInteractionView: UIView {
@@ -21,7 +23,7 @@ public class ORBChatToolbarInteractionView: UIView {
 	// Properties
 	@IBOutlet private var view: UIView!
 	@IBOutlet public var delegate: ORBChatToolbarDelegate?
-	@IBOutlet weak var keyboardTextField: UITextField!
+	@IBOutlet public weak var keyboardTextView: UITextViewElement!
 	public var isListening = false
 	private var speakerGrillAnimation: SpeakerGrillAnimation!
 	
@@ -32,11 +34,12 @@ public class ORBChatToolbarInteractionView: UIView {
 	private var buttons: [UIAction]!
 	
 	@IBOutlet weak var micButtonLargeHeightConstraint: NSLayoutConstraint!
-	@IBOutlet weak var keyboardButtonSizeConstraint: NSLayoutConstraint!
+	@IBOutlet public weak var keyboardButtonSizeConstraint: NSLayoutConstraint!
 	@IBOutlet weak var keyboardButtonLeadingConstraint: NSLayoutConstraint!
 	@IBOutlet weak var moreButtonTrailingConstraint: NSLayoutConstraint!
 	private var needsToSetupAutoLayoutAlignment = true
 	
+	@IBOutlet weak var micButtonCenterXConstraint: NSLayoutConstraint!
 	
 	// Methods
 	required public init?(coder aDecoder: NSCoder) {
@@ -48,7 +51,8 @@ public class ORBChatToolbarInteractionView: UIView {
 		
 		buttons = [micButton, keyboardButton, moreButton]
 		
-		style(micButton, [.glyphEdgeInsets: 10])
+		keyboardTextView.delegate = self
+		
 		micButton.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(micButtonWasTapped(_:))))
 		micButton.sizeExtraSmall = keyboardButtonSizeConstraint.constant
 		micButton.sizeLarge = micButtonLargeHeightConstraint.constant
@@ -82,11 +86,12 @@ public class ORBChatToolbarInteractionView: UIView {
 			toggleListeningModeAnimations(executeChatToolbarDelegateMethods: true)
 		}
 		
-		if keyboardTextField.isHidden == false {
+		if !keyboardTextView.isHidden {
+			keyboardTextView.resignFirstResponder()
 			UIView.animate(withDuration: 0.15, animations: {
-				self.keyboardTextField.alpha = 0
+				self.keyboardTextView.alpha = 0
 			}, completion: { (_) in
-				self.keyboardTextField.isHidden = true
+				self.keyboardTextView.isHidden = true
 				self.delegate?.chatToolbarKeyboardButtonWasDeselected()
 				toggleMic()
 			})
@@ -95,34 +100,35 @@ public class ORBChatToolbarInteractionView: UIView {
 	
 	@objc private func keyboardButtonWasTapped(_ gesture: UITapGestureRecognizer) {
 		keyboardButton.toggle(inactiveState: { }, activeState: {
-			delegate?.chatToolbarKeyboardButtonWasSelected()
-			switchButtonStates(focusOn: keyboardButton)
-			micButton.changeSizeState(to: .extraSmall)
+			self.delegate?.chatToolbarKeyboardButtonWasSelected()
+			self.switchButtonStates(focusOn: self.keyboardButton)
+			self.micButton.changeSizeState(to: .extraSmall)
 			
 			let offScreen = (padding.extraLarge * 4)
 			
-			UIView.animate(withDuration: 0.15, animations: {
-				self.keyboardButton.move(addToX: -(offScreen), addToY: nil)
-				self.micButton.move(x: origins.left, y: nil)
-				self.micButton.move(addToX: self.keyboardButtonLeadingConstraint.constant, addToY: nil)
-				self.moreButton.move(addToX: offScreen, addToY: nil)
-			}, completion: { (_) in
-				self.keyboardTextField.isHidden = false
-				self.keyboardTextField.becomeFirstResponder()
+			UIView.updateConstraints(in: self, {
+				self.keyboardButtonLeadingConstraint.constant = -(offScreen)
+				self.micButtonCenterXConstraint.constant = -((self.frame.width / 2) - (self.micButton.frame.width / 2) - padding.medium)
+				self.moreButtonTrailingConstraint.constant = -(offScreen)
+				
+			}, animatedWithDuration: 0.15, delay: 0, usingSpringWithDamping: 1.0, initialSpringVelocity: 1.0, options: .curveEaseInOut, completion: {
+				self.keyboardTextView.isHidden = false
+				self.keyboardTextView.becomeFirstResponder()
 				UIView.animate(withDuration: 0.15, animations: {
-					self.keyboardTextField.alpha = 1
+					self.keyboardTextView.alpha = 1
 				})
 			})
+			
 		}, hasHapticFeedback: true)
 	}
 	
 	@objc private func moreButtonWasTapped(_ gesture: UITapGestureRecognizer) {
 		moreButton.toggle(inactiveState: {
-			delegate?.chatToolbarMoreButtonWasDeselected()
-			switchButtonStates(focusOn: nil)
+			self.delegate?.chatToolbarMoreButtonWasDeselected()
+			self.switchButtonStates(focusOn: nil)
 		}, activeState: {
-			delegate?.chatToolbarMoreButtonWasSelected()
-			switchButtonStates(focusOn: moreButton)
+			self.delegate?.chatToolbarMoreButtonWasSelected()
+			self.switchButtonStates(focusOn: self.moreButton)
 		}, hasHapticFeedback: true)
 	}
 	
@@ -138,24 +144,24 @@ public class ORBChatToolbarInteractionView: UIView {
 	}
 	
 	private func realignChatToolbarButton(_ button: UIAction) {
-		UIView.animate(withDuration: 0.15) {
+		UIView.updateConstraints(in: self, {
 			if button == self.micButton {
-				button.move(x: origins.center, y: nil)
+				self.micButtonCenterXConstraint.constant = 0
 			} else if button == self.keyboardButton {
-				button.move(x: self.keyboardButtonLeadingConstraint.constant, y: nil)
+				self.keyboardButtonLeadingConstraint.constant = padding.medium
 			} else if button == self.moreButton {
-				button.move(x: origins.right, y: nil)
-				button.move(addToX: -(self.moreButtonTrailingConstraint.constant), addToY: nil)
+				self.moreButtonTrailingConstraint.constant = padding.medium
 			}
-		}
+		}, animatedWithDuration: 0.15, delay: 0, usingSpringWithDamping: 1.0, initialSpringVelocity: 1.0, options: .curveEaseInOut) { }
 	}
 	
 	public func toggleListeningModeAnimations(executeChatToolbarDelegateMethods: Bool) {
 		micButton.toggle(inactiveState: {
-			isListening = false
-			micButton.changeSizeState(to: .large)
+			self.isListening = false
+			self.switchButtonStates(focusOn: nil)
+			self.micButton.changeSizeState(to: .large)
 			if executeChatToolbarDelegateMethods {
-				delegate?.chatToolbarMicDidExitListeningMode()
+				self.delegate?.chatToolbarMicDidExitListeningMode()
 			}
 			
 			UIView.animate(withDuration: 0.85, animations: {
@@ -165,11 +171,14 @@ public class ORBChatToolbarInteractionView: UIView {
 				self.keyboardButton.isUserInteractionEnabled = true
 				self.moreButton.isUserInteractionEnabled = true
 			})
+			
+			self.speakerGrillAnimation.toggle(isListening: false)
 		}, activeState: {
-			isListening = true
-			micButton.changeSizeState(to: .small)
+			self.isListening = true
+			self.switchButtonStates(focusOn: self.micButton)
+			self.micButton.changeSizeState(to: .small)
 			if executeChatToolbarDelegateMethods {
-				delegate?.chatToolbarMicDidEnterListeningMode()
+				self.delegate?.chatToolbarMicDidEnterListeningMode()
 			}
 			
 			UIView.animate(withDuration: 0.15, animations: {
@@ -179,9 +188,9 @@ public class ORBChatToolbarInteractionView: UIView {
 				self.keyboardButton.isUserInteractionEnabled = false
 				self.moreButton.isUserInteractionEnabled = false
 			})
+			
+			self.speakerGrillAnimation.toggle(isListening: true)
 		}, hasHapticFeedback: true)
-		
-		speakerGrillAnimation.toggle(isListening: micButton.isSelected)
 	}
 	
 	private class SpeakerGrillAnimation: UIView {
@@ -286,6 +295,26 @@ public class ORBChatToolbarInteractionView: UIView {
 			static var width: CGFloat { return 4 }
 			static var spacing: CGFloat { return padding.small }
 			static var height: CGFloat { return padding.small }
+		}
+	}
+}
+
+extension ORBChatToolbarInteractionView: UITextViewDelegate {
+	public func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+		if text == "\n" {
+			if let chatToolbarTextViewDidReturn = delegate?.chatToolbarTextViewDidReturn {
+				chatToolbarTextViewDidReturn()
+			}
+			
+			keyboardTextView.resignFirstResponder()
+			return false
+		}
+		return true
+	}
+	
+	public func textViewDidChange(_ textView: UITextView) {
+		if let chatToolbarTextViewUpdateHeight = delegate?.chatToolbarTextViewUpdateHeight {
+			chatToolbarTextViewUpdateHeight()
 		}
 	}
 }

@@ -176,6 +176,7 @@
 				607FACCD1AFB9204008FA782 /* Frameworks */,
 				607FACCE1AFB9204008FA782 /* Resources */,
 				1FC1220D79B22A9C2DA872A3 /* [CP] Embed Pods Frameworks */,
+				00B57A3C106D26DEDB42D0E6 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -265,6 +266,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		00B57A3C106D26DEDB42D0E6 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-OrbitaFramework_Example/Pods-OrbitaFramework_Example-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		1FC1220D79B22A9C2DA872A3 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;

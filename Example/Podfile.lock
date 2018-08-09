@@ -9,9 +9,9 @@ DEPENDENCIES:
 
 EXTERNAL SOURCES:
   Efficio:
-    :path: "../../Efficio"
+    :path: ../../Efficio
   OrbitaFramework:
-    :path: "../"
+    :path: ../
 
 SPEC CHECKSUMS:
   Efficio: 24a85078f36e7f83294b6a0fdb43bfb327674c37
@@ -19,4 +19,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: 73e612448930c8f031cba884d0952974291f8341
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.4.0
